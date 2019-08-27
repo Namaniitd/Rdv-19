@@ -453,12 +453,12 @@ function generateRDVNumber(firstName, lastName) {
   return rdvNumber;
 }
 
-function forgotPassword(email) {
-  // const user = req.body;
-  // if (!user)
-  //   return utils.error(res, 400, "Invalid Data");
-  // if (!user.email)
-  //   return utils.error(res, 400, "Please enter Email Address");
+function forgotPassword(req, res) {
+  const user = req.body;
+  if (!user)
+    return utils.error(res, 400, "Invalid Data");
+  if (!user.email)
+    return utils.error(res, 400, "Please enter Email Address");
 
   const password = generator.generate({length: 10, numbers: true});
   const hashPassword = crypto.createHash('md5').update(password).digest('hex')
@@ -468,7 +468,7 @@ function forgotPassword(email) {
     IndexName: 'email',
     KeyConditionExpression: 'email = :value',
     ExpressionAttributeValues: {
-      ':value': email,
+      ':value': user.email,
     },
   };
 
@@ -480,31 +480,29 @@ function forgotPassword(email) {
         return utils.error(res,400, "Member with the given Email Address does not exist")
       else {
         const existing_user = data.Items[0];
-        console.log(existing_user);
-        // let refParams = {
-        //   TableName: tableName,
-        //   Key: {
-        //     'rdv_number': existing_user.rdv_number,
-        //   },
-        //   ConditionExpression: 'attribute_exists(rdv_number)',
-        //   UpdateExpression: 'SET password = :value',
-        //   ExpressionAttributeValues: {
-        //     ':value': hashPassword,
-        //   },
-        // };
-        // dynamoDB.update(refParams, function (err, data) {
-        //   if (err) {
-        //     console.log(err);
-        //     // return utils.error(res, 400, "Invalid email address given");
-        //     console.log("Invalid Email Id")
-        //   } else {
-        //     forgotPasswordMailer.sendMail(existing_user.email.toLowerCase(), existing_user.first_name + " " + existing_user.last_name, existing_user.rdv_number, password);
-        //     // return res.json({
-        //       // message: "Success! New password send to your mail id",
-        //     // });
-        //     console.log("Email Sent")
-        //   }
-        // });
+        // console.log(existing_user);
+        let refParams = {
+          TableName: tableName,
+          Key: {
+            'rdv_number': existing_user.rdv_number,
+          },
+          ConditionExpression: 'attribute_exists(rdv_number)',
+          UpdateExpression: 'SET password = :value',
+          ExpressionAttributeValues: {
+            ':value': hashPassword,
+          },
+        };
+        dynamoDB.update(refParams, function (err, data) {
+          if (err) {
+            console.log(err);
+            return utils.error(res, 400, "Invalid email address given");
+          } else {
+            forgotPasswordMailer.sendMail(existing_user.email.toLowerCase(), existing_user.first_name + " " + existing_user.last_name, existing_user.rdv_number, password);
+            return res.json({
+              message: "Success! New password send to your mail id",
+            });
+          }
+        });
       }
     }
   });
