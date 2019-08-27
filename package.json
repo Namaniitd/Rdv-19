@@ -1,0 +1,76 @@
+{
+  "name": "SymphonyOfNostalgia",
+  "version": "2.0.0",
+  "description": "RDV 2018 Web passport-local",
+  "main": "app.js",
+  "dependencies": {
+    "asn1": "^0.2.3",
+    "aws-sdk": "^2.286.2",
+    "babel-cli": "^6.26.0",
+    "node-bin-setup": "^1.0.6",
+    "body-parser": "^1.18.3",
+    "bootstrap-material-design": "^4.1.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "csv-parser": "^1.12.1",
+    "csvtojson": "^2.0.8",
+    "d3-request": "^1.0.6",
+    "delay": "^4.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
+    "express-session": "^1.15.6",
+    "generate-password": "^1.4.0",
+    "json2csv": "^4.1.6",
+    "jsonexport": "^2.2.1",
+    "jsonwebtoken": "^8.3.0",
+    "mailcomposer": "^4.0.2",
+    "multer": "^1.3.1",
+    "mysql": "^2.15.0",
+    "nodemailer": "^4.6.7",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "latest",
+    "hummus": "1.0.82",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-twitter": "^1.0.4",
+    "qr-image": "^3.2.0",
+    "request": "^2.88.0",
+    "rimraf": "^2.6.2",
+    "sql.js": "0.3.2",
+    "underscore": "^1.8.3",
+    "util": "^0.10.3",
+    "uuid": "^3.0.1",
+    "vhost": "^3.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "3.1.0",
+    "eslint": "3.15.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.9.0",
+    "aws-sdk": "2.286.2"
+  },
+  "binary": {
+    "module_name": "hummus",
+    "module_path": "./lib/binding/",
+    "host": "https://dynamodb.ap-south-1.amazonaws.com"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "babel-node start-client.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayush21298/CAP-IITD.git"
+  },
+  "author": "Sunil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ayush21298/CAP-IITD/issues"
+  },
+  "homepage": "https://github.com/Ayush21298/CAP-IITD#readme"
+}

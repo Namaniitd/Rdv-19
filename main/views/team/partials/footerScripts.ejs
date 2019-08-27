@@ -1,0 +1,23 @@
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="../../../scripts/team/imagesloaded.pkgd.min.js"></script>
+<script src="../../../scripts/team/anime.min.js"></script>
+<script src="../../../scripts/team/main.js"></script>
+		<script>
+		(function() {
+			var slideshow = new MLSlideshow(document.querySelector('.slideshow'));
+
+			document.querySelector('#next-slide').addEventListener('click', function() {
+				slideshow.next();
+			});
+
+			document.querySelector('#prev-slide').addEventListener('click', function() {
+				slideshow.prev();
+			});
+		})();
+		</script>
+<script type="text/javascript"> check();</script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>

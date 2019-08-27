@@ -1,0 +1,208 @@
+@font-face {
+	font-family: 'nexa_boldregular';
+	font-weight: bold;
+	font-style: normal;
+	src: url('../../assets/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.eot');
+	src: url('../../assets/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../../assets/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff2') format('woff2'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff') format('woff'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.ttf') format('truetype'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.svg#nexa_boldregular') format('svg');
+}
+@font-face {
+	font-family: Kizo;
+	src: url('../assets/fonts/Kizo-Bold.otf');
+}
+
+.slideshow {
+	position: relative;
+	width: 100%; /* define width here */
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+.slideshow:focus {
+	outline: none;
+}
+
+.js .slideshow::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 70px;
+	height: 70px;
+	margin: -35px 0 0 -35px;
+	pointer-events: none;
+	border: 10px solid rgba(255, 255, 255, 0.1);
+	border-top-color: #e1aa7c;
+	border-radius: 50%;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	-webkit-animation: rotateLoader 0.8s linear infinite forwards;
+	animation: rotateLoader 0.8s linear infinite forwards;
+}
+
+@-webkit-keyframes rotateLoader {
+	to {
+		-webkit-transform: rotate3d(360deg);
+		transform: rotate3d(360deg);
+	}
+}
+
+@keyframes rotateLoader {
+	to {
+		-webkit-transform: rotate3d(0, 0, 1, 360deg);
+		transform: rotate3d(0, 0, 1, 360deg);
+	}
+}
+
+.js .slideshow--loaded::after {
+	opacity: 0;
+}
+
+.js .slideshow {
+	height: 100vh; /* define height here */
+	max-height: 1000px;
+	pointer-events: none;
+}
+
+.slide {
+	position: relative;
+	width: 100%;
+	margin: 1em 0 1em 0;
+	padding: 1em 1em 6em 1em;
+}
+
+.js .slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	margin: 0;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.js .slide--current {
+	pointer-events: auto;
+	opacity: 1;
+}
+
+.slide-imgwrap {
+	position: relative;
+	width: calc(100% - 4em);
+	margin: .4em auto;
+	padding-top:50px!important;
+	opacity: 0.98;
+	height: 100%;
+}
+@media (max-width:768px){
+	.slide-imgwrap{
+		padding-top:0px;
+	}
+}
+
+.no-js .slide-imgwrap {
+	height: 400px;
+}
+
+.slide__img-inner {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: rotateZ(0deg);
+	transform: rotateZ(0deg);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	will-change: tranform, opacity;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.slide__title {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100%);
+	/* max-width: 800px; */
+	padding-top: 2em;
+	padding-bottom:6em;
+	/* background-color: grey; */
+	text-align: center;
+	color: var(--main-theme-color);
+	z-index: 10;
+}
+
+.js .slide__title {
+	pointer-events: none;
+	opacity: 0;
+}
+
+.js .slide--current .slide__title {
+	pointer-events: auto;
+	opacity: 1;
+}
+@font-face {
+    font-family: caviar;
+    src: url(../../assets/fonts/CaviarDreams.ttf);
+}
+
+.slide__title-main {
+	font-family: 'caviar', serif;
+	font-size: 2.8em;
+	line-height: 0.8;
+	display: inline-block;
+	margin: 0;
+}
+
+.slide__title-sub {
+	font-size: 1.15em;
+	line-height: 1.5;
+	margin: 1em 0 0 0;
+}
+
+.slide__title-sub a {
+	border-bottom: 1px solid;
+}
+
+#tech{
+	margin-top:10.8rem;
+}
+/* Media query for smaller screens (general elements) */
+
+@media screen and (max-width: 45em) {
+	.slideshow {
+		padding-top: 7em;
+	}
+	.js .slideshow {
+		height: calc(100vh - 60px);
+	}
+
+	.slide {
+		padding: 6em 0;
+	}
+	#tech{
+		margin-top:5.8rem;
+	}
+	.no-js .slide {
+		padding: 4em 0 0;
+	}
+	.slide-imgwrap {
+		width: calc(100% - 1em);
+	}
+	.slide__title {
+		width: calc(100%);
+	}
+	.slide__title-main {
+		font-size: 2em;
+	}
+	.slide__title-sub {
+		font-size: 0.75em;
+	}
+}
+@media screen and (max-width:490px){
+	.slide--layout-5 .slide-imgwrap{
+		height: 100%;
+	}
+	#tech{
+		margin-top: 28rem;
+	}
+}

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rendezvous'18, A Symphony of Nostalgia</title>
+
+  <link rel="icon" href="/assets/images/rdv-bruh.png" type="image/png">
+<link rel="shortcut icon" href="/assets/images/rdv-bro.ico" type="img/x-icon">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/scripts/checkAndOutPronite.js"></script>
+  <script type="text/javascript"> check();</script>
+      <link rel="stylesheet" href="/styles/passbook_window/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/passbook_window/button.css">
+</head>
+
+<body>
+<div class="row text-center" style="margin-left:0px;margin-right:0px;">
+<div class="col-lg-12 text-center">
+  <div class="container" style="position:absolute;right:30px;width:300px;top:10px;">
+<ul style="font-size: 25px;list-style: none;">
+  <li id="username"></li>
+  <li id="points"></li>
+  <li id="rdvid"></li>
+</ul>
+</div>
+  <h1 style="font-size:60px">RENDEZVOUS'18
+<h1>Pass Confirm System</h1>
+</div>
+</div>
+<div class="row" style="margin-left:0px;margin-right:0px;">
+  <div class="col-lg-3 col-md-6 col-sm-6" style="height:75vh;">
+  <div class="blog-card spring-fever">
+    <form id="melange-form" onSubmit="melange();return false;" >
+  <div class="title-content">
+    <h3>MELANGE</h3>
+    <hr />
+    <!-- <div class="g-recaptcha" style="margin-top:30px;margin-left:3px;" data-sitekey="6LcQr3EUAAAAAMlHtw44WZ-VVheclGyT6N9uRxdP" data-callback="recaptcha_callback1"></div> -->
+    <!-- <div>  -->
+  </div><!-- /.title-content -->
+
+  <div class="utility-info">
+    <ul class="utility-list">
+     <div class="CTA text-center">
+            <button type="submit" id="b1" class="slide" value=""><span>Confirm Pass</span></button>
+      </div>
+    </ul>
+  </div>
+  </form>
+  <!-- /.utility-info -->
+  <!-- overlays -->
+  <div class="gradient-overlay"></div>
+  <div class="color-overlay"></div>
+</div><!-- /.blog-card -->
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-sm-6" style="height:75vh;">
+  <div class="blog-card spring-fever">
+    <form id="dhoom-form" onSubmit="dhoom();return false;" >
+  <div class="title-content">
+    <h3>DHOOM</h3>
+    <hr />
+    <!-- <div class="g-recaptcha" style="margin-top:30px;margin-left:3px;" data-sitekey="6LcQr3EUAAAAAMlHtw44WZ-VVheclGyT6N9uRxdP" data-callback="recaptcha_callback2"></div> -->
+  </div><!-- /.title-content -->
+
+  <div class="utility-info">
+    <ul class="utility-list">
+      <div class="CTA text-center">
+            <button type="submit" id="b2"  class="slide" value=""><span>Confirm Pass</span></button>
+      </div>
+    </ul>
+  </div>
+</form><!-- /.utility-info -->
+  <!-- overlays -->
+  <div class="gradient-overlay"></div>
+  <div class="color-overlay"></div>
+</div><!-- /.blog-card -->
+  </div>
+
+<div class="col-lg-3 col-md-6 col-sm-6" style="height:75vh;">
+  <div class="blog-card spring-fever">
+    <form id="spectrum-form" onSubmit="spectrum();return false;" >
+  <div class="title-content">
+    <h3>SPECTRUM</h3>
+    <hr />
+    <!-- <div class="g-recaptcha" style="margin-top:30px;margin-left:3px;" data-sitekey="6LcQr3EUAAAAAMlHtw44WZ-VVheclGyT6N9uRxdP" data-callback="recaptcha_callback3"></div> -->
+  </div><!-- /.title-content -->
+
+  <div class="utility-info">
+    <ul class="utility-list">
+      <div class="CTA text-center">
+            <button type="submit" id="b3"  class="slide" value=""><span>Confirm Pass</span></button>
+      </div>
+    </ul>
+  </div>
+</form>
+  <!-- /.utility-info -->
+  <!-- overlays -->
+  <div class="gradient-overlay"></div>
+  <div class="color-overlay"></div>
+</div><!-- /.blog-card -->
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-sm-6" style="height:75vh;">
+  <div class="blog-card spring-fever">
+    <form id="kaliedoscope-form" onSubmit="kaliedoscope();return false;" >
+  <div class="title-content">
+    <h3>KALIEDOSCOPE</h3>
+    <hr />
+    <!-- <div class="g-recaptcha" style="margin-top:30px;margin-left:3px;" data-sitekey="6LcQr3EUAAAAAMlHtw44WZ-VVheclGyT6N9uRxdP" data-callback="recaptcha_callback4"></div> -->
+  </div><!-- /.title-content -->
+
+  <div class="utility-info">
+    <ul class="utility-list">
+      <div class="CTA text-center">
+            <button type="submit" id="b4" class="slide" value=""><span>Confirm Pass</span></button>
+      </div>
+    </ul>
+  </div>
+</form>
+  <!-- /.utility-info -->
+  <!-- overlays -->
+  <div class="gradient-overlay"></div>
+  <div class="color-overlay"></div>
+</div><!-- /.blog-card -->
+  </div>
+</div>
+  
+<script src="https://www.google.com/recaptcha/api.js"></script>
+     <script  src="/scripts6LcQr3EUAAAAAMlHtw44WZ-VVheclGyT6N9uRxdPtps://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  function melange(){
+      var formdata = {};
+      $.each($('#melange-form').serializeArray(), function(_, kv) {
+        formdata[kv.name] = kv.value;
+      });
+      console.log(formdata);
+      var tok = getToken();
+      obj = {
+        "token":tok,
+        "pronite":"melange"
+      }
+      console.log($('#b1')[0].innerText)
+      if($('#b1')[0].innerText == "Download Pass"){
+        console.log("here we done")
+        $.get('/api/pronite/pdf',obj).done((data,status)=>{
+          console.log("done")
+          var downloadLink = document.createElement('a')
+          downloadLink.target = '_blank'
+          downloadLink.download = 'new_pdf_haha.pdf'
+          var blob = new Blob([data], { type: 'application/pdf' })
+          var URL = window.URL || window.webkitURL
+          var downloadUrl = URL.createObjectURL(blob)
+          // set object URL as the anchor's href
+          downloadLink.href = "/api/pronite/pdf?token="+obj.token+"&pronite=melange"
+          // append the anchor to document body
+          document.body.append(downloadLink)
+          // fire a click event on the anchor
+          console.log("click fired")
+          downloadLink.click()
+
+          // cleanup: remove element and revoke object URL
+          document.body.removeChild(downloadLink)
+          URL.revokeObjectURL(downloadUrl)
+        }).fail(
+        function(jqXHR, textStatus, errorThrown) {
+          //$("#error").html(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+            console.log(jqXHR.responseJSON);
+            if(jqXHR.responseJSON.error){
+              alert(jqXHR.responseJSON.message);
+            }
+        });
+      }
+      else{
+      $.post("/api/pronite/confirm",obj)
+      .done((data,status)=>{
+            console.log(status);
+            console.log(data);
+            $("#b1 span").text("Download Pass");
+            alert("melange pass Confirmed");
+            // window.location.href = "/";
+      }).fail(
+        function(jqXHR, textStatus, errorThrown) {
+          //$("#error").html(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+            console.log(jqXHR.responseJSON);
+            if(jqXHR.responseJSON.error){
+              alert(jqXHR.responseJSON.message);
+            }
+        });
+    }
+
+
+  }
+
+    function dhoom(){
+      var formdata = {};
+      $.each($('#dhoom-form').serializeArray(), function(_, kv) {
+        formdata[kv.name] = kv.value;
+      });
+      console.log(formdata);
+      obj = {
+        // "g-recaptcha-response":formdata["g-recaptcha-response"],
+        "token":getToken(),
+        "pronite":"dhoom"
+      }
+      console.log("in dhoom")
+      console.log($('#b2')[0].innerText )
+      if($('#b2')[0].innerText == "Download Pass"){
+        console.log("here we done")
+        $.get('/api/pronite/pdf',obj).done((data,status)=>{
+          console.log("done")
+          var downloadLink = document.createElement('a')
+          downloadLink.target = '_blank'
+          downloadLink.download = 'new_pdf_haha.pdf'
+          var blob = new Blob([data], { type: 'application/pdf' })
+          var URL = window.URL || window.webkitURL
+          var downloadUrl = URL.createObjectURL(blob)
+          // set object URL as the anchor's href
+          downloadLink.href = "/api/pronite/pdf?token="+obj.token+"&pronite=dhoom"
+          // append the anchor to document body
+          document.body.append(downloadLink)
+          // fire a click event on the anchor
+          console.log("click fired")
+          downloadLink.click()
+
+          // cleanup: remove element and revoke object URL
+          document.body.removeChild(downloadLink)
+          URL.revokeObjectURL(downloadUrl)
+        }).fail(
+        function(jqXHR, textStatus, errorThrown) {
+          //$("#error").html(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+            console.log(jqXHR.responseJSON);
+            if(jqXHR.responseJSON.error){
+              alert(jqXHR.responseJSON.message);
+            }
+        });
+      }
+      else{
+      $.post("/api/pronite/confirm",obj)
+      .done((data,status)=>{
+            console.log(status);
+            console.log(data);
+            $("#b2 span").text("Download Pass");
+            alert("dhoom pass Confirmed")
+            // window.location.href = "/";
+      }).fail(
+        function(jqXHR, textStatus, errorThrown) {
+          //$("#error").html(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+            console.log(jqXHR.responseJSON);
+            if(jqXHR.responseJSON.error){
+              alert(jqXHR.responseJSON.message);
+            }
+        });
+    }
+  }
+    
+    function kaliedoscope(){
+      var formdata = {};
+      $.each($('#kaliedoscope-form').serializeArray(), function(_, kv) {
+        formdata[kv.name] = kv.value;
+      });
+      console.log(formdata);
+      var tok = getToken()
+      obj = {
+        // "g-recaptcha-response":formdata["g-recaptcha-response"],
+        "token": tok,
+        "pronite":"kaleidoscope"
+      }
+      if($('#b4')[0].innerText == "Download Pass"){
+        console.log("here we done")
+        $.get('/api/pronite/pdf',obj).done((data,status)=>{
+          console.log("done")
+          var downloadLink = document.createElement('a')
+          downloadLink.target = '_blank'
+          downloadLink.download = 'new_pdf_haha.pdf'
+          var blob = new Blob([data], { type: 'application/pdf' })
+          var URL = window.URL || window.webkitURL
+          var downloadUrl = URL.createObjectURL(blob)
+          // set object URL as the anchor's href
+          downloadLink.href = "/api/pronite/pdf?token="+obj.token+"&pronite=kaleidoscope"
+          // append the anchor to document body
+          document.body.append(downloadLink)
+          // fire a click event on the anchor
+          console.log("click fired")
+          downloadLink.click()
+
+          // cleanup: remove element and revoke object URL
+          document.body.removeChild(downloadLink)
+          URL.revokeObjectURL(downloadUrl)
+        }).fail(
+        function(jqXHR, textStatus, errorThrown) {
+          //$("#error").html(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+            console.log(jqXHR.responseJSON);
+            if(jqXHR.responseJSON.error){
+              alert(jqXHR.responseJSON.message);
+            }
+        });
+      }
+      else{
+      $.post("/api/pronite/confirm",obj)
+      .done((data,status)=>{
+            console.log(status);
+            console.log(data);
+            $("#b4 span").text("Download Pass");
+            alert("kaliedoscope pass Confirmed")
+            // window.location.href = "/";
+      }).fail(
+        function(jqXHR, textStatus, errorThrown) {
+          //$("#error").html(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+            console.log(jqXHR.responseJSON);
+            if(jqXHR.responseJSON.error){
+              alert(jqXHR.responseJSON.message);
+            }
+        });
+    }
+
+  }
+
+    function spectrum(){
+      var formdata = {};
+      $.each($('#spectrum-form').serializeArray(), function(_, kv) {
+        formdata[kv.name] = kv.value;
+      });
+      console.log(formdata);
+      obj = {
+        // "g-recaptcha-response":formdata["g-recaptcha-response"],
+        "token":getToken(),
+        "pronite":"spectrum"
+      }
+      if($('#b3')[0].innerText == "Download Pass"){
+        console.log("here we done")
+        $.get('/api/pronite/pdf',obj).done((data,status)=>{
+          console.log("done")
+          var downloadLink = document.createElement('a')
+          downloadLink.target = '_blank'
+          downloadLink.download = 'new_pdf_haha.pdf'
+          var blob = new Blob([data], { type: 'application/pdf' })
+          var URL = window.URL || window.webkitURL
+          var downloadUrl = URL.createObjectURL(blob)
+          // set object URL as the anchor's href
+          downloadLink.href = "/api/pronite/pdf?token="+obj.token+"&pronite=spectrum"
+          // append the anchor to document body
+          document.body.append(downloadLink)
+          // fire a click event on the anchor
+          console.log("click fired")
+          downloadLink.click()
+
+          // cleanup: remove element and revoke object URL
+          document.body.removeChild(downloadLink)
+          URL.revokeObjectURL(downloadUrl)
+        }).fail(
+        function(jqXHR, textStatus, errorThrown) {
+          //$("#error").html(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+            console.log(jqXHR.responseJSON);
+            if(jqXHR.responseJSON.error){
+              alert(jqXHR.responseJSON.message);
+            }
+        });
+      }
+      else{
+      $.post("/api/pronite/confirm",obj)
+      .done((data,status)=>{
+            console.log(status);
+            console.log(data);
+            $("#b3 span").text("Download Pass");
+            alert("spectrum pass Confirmed")
+            // window.location.href = "/";
+      }).fail(
+        function(jqXHR, textStatus, errorThrown) {
+          //$("#error").html(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+            console.log(jqXHR.responseJSON);
+            if(jqXHR.responseJSON.error){
+              alert(jqXHR.responseJSON.message);
+            }
+        });
+    }
+  }
+
+  function getToken() {
+  const token = localStorage.getItem('Pronite');
+  // const info=localStorage.getItem('UserPronite');
+    if (typeof(token) === "undefined" || !token || token === '')
+      return null;
+    return token;
+  }
+</script>
+
+<script type="text/javascript">
+         function recaptcha_callback1() {
+         $('#b1').removeAttr('disabled');
+          };                                 
+   </script>
+   <script type="text/javascript">
+         function recaptcha_callback2() {
+         $('#b2').removeAttr('disabled');
+          };                                 
+   </script>
+   <script type="text/javascript">
+         function recaptcha_callback3() {
+         $('#b3').removeAttr('disabled');
+          };                                 
+   </script>
+   <script type="text/javascript">
+         function recaptcha_callback4() {
+         $('#b4').removeAttr('disabled');
+          };                                 
+   </script>
+
+<script type="text/javascript">
+  window.onload = check();
+  function check(){
+    var token = getToken();
+    if(token==null){
+      console.log("token was null")
+      if(window.location.pathname=="/pronite/confirm"){
+          window.location.href = "/pronite/login";
+      }
+    }
+  }
+  
+</script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .reg-data {
+    visibility: hidden;
+    display: none;
+    width: 0 !important;
+  }
+  .main-logo {
+    left: -70px;
+  }
+  .main-icons {
+    left: -20px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: ivory;
+}

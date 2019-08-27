@@ -1,0 +1,26 @@
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 8.5em 0 0 0  #862715;
+}
+.slide {
+ 	color: #862715;
+	hover: #862715;
+}
+button {
+  color: #862715;
+  transition: 0.5s;
+}
+button:hover, button:focus {
+  border-color: #862715;
+  color: #fff;
+}
+
+button  {
+  cursor: pointer;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}

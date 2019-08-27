@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sectionall p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+  color: black;
+}
+.scr{
+
+overflow-y: auto;
+}
+.mainn {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.sectionall {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+.inputn {
+  display: none;
+}
+
+.labelall {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 9px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+.labelall:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+.labelall:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + .labelall {
+  color: #555;
+  border: 1px solid #ddd;
+  /*border-top: 2px solid orange;*/
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5 {
+  display: block;
+}
+section[id^='content1_']{
+  display: block;
+}
+input[id^='tab1_']:checked ~ section[id^='content1_']{
+    display: block;
+}
+input[id^='tab2_']:checked ~ section[id^='content2_']{
+    display: block;
+}
+input[id^='tab3_']:checked ~ section[id^='content3_']{
+    display: block;
+}
+input[id^='tab4_']:checked ~ section[id^='content4_']{
+    display: block;
+}
+input[id^='tab5_']:checked ~ section[id^='content5_']{
+    display: block;
+}
+input[id^='tab6_']:checked ~ section[id^='content6_']{
+    display: block;
+}
+input[id^='tab2_']:checked ~ section[id^='content1_']{
+    display: none;
+}
+input[id^='tab3_']:checked ~ section[id^='content1_']{
+    display: none;
+}
+input[id^='tab4_']:checked ~ section[id^='content1_']{
+    display: none;
+}
+input[id^='tab5_']:checked ~ section[id^='content1_']{
+    display: none;
+}
+input[id^='tab6_']:checked ~ section[id^='content1_']{
+    display: none;
+}
+/* @media screen and (max-width: 650px) {
+  .labelall {
+    font-size: 0;
+  }
+
+  .labelall:before {
+    margin: 0;
+    font-size: 18px;
+  }
+} */
+@media screen and (max-width: 400px) {
+  .labelall {
+    padding: 15px;
+  }
+}
+@font-face {
+    font-family: caviar;
+    src: url(../../assets/fonts/CaviarDreams.ttf);
+}
+.artist-name{
+  font-family: 'caviar',sans-serif;
+}

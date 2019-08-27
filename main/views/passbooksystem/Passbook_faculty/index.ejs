@@ -1,0 +1,89 @@
+<script type="text/javascript">
+//var localStorage = unsafeWindow.localStorage;
+//const tok = localStorage.getItem('UserRed');
+//console.log(tok);
+//if(typeof(tok) === "undefined" || !tok || token === "")
+//	alert("Something went wrong");
+//else
+//	alert("tok");
+
+function receiveMessage(event)
+{
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "/api/register1", true);
+	xhr.setRequestHeader('Content-Type',  "application/json;charset=UTF-8");
+
+	if(typeof(event.data)=="object"){
+		if(event.data.target)
+			return;
+	}else{
+		if(JSON.parse(event.data).target){
+			return;
+		}
+	}
+	console.log(event.data);
+
+	console.log(typeof(event.data));
+	var sub;
+	if(typeof(event.data)=="object")
+		sub = JSON.stringify(event.data);
+	else
+		sub = event.data;
+	xhr.send(sub);
+		xhr.onload = function () {
+    if (xhr.readyState === xhr.DONE) {
+            console.log(xhr.response);
+            console.log(xhr.responseText);
+    		pronitelogin(event.data);
+    	}
+    }
+};
+
+function pronitelogin(user){
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "/pronite/login", true);
+	xhr.setRequestHeader('Content-Type',  "application/json;charset=UTF-8");
+	console.log(typeof(user));
+	console.log(user)
+	if(typeof(user)=="object"){
+		user = user;
+	}else{
+		console.log(JSON.parse(user).email);
+		user = JSON.parse(user);
+	}
+	if(!user.email){
+		return;
+	}
+	var obj = {login_id: user.email,password:"passwordisawesome"};
+	console.log(obj)
+	xhr.send(JSON.stringify(obj));
+	xhr.onload = function () {
+    if (xhr.readyState === xhr.DONE) {
+            console.log(xhr.response);
+            console.log(JSON.parse(xhr.responseText).token);
+            console.log(JSON.parse(xhr.responseText).user);
+            console.log(JSON.parse(xhr.responseText));
+
+
+            localStorage.setItem("Pronite",JSON.parse(xhr.responseText).token);
+            localStorage.setItem("UserPronite",JSON.stringify(JSON.parse(xhr.responseText).user));
+
+			const tok = localStorage.getItem('UserPronite');
+			console.log(tok);
+			if(typeof(tok) === "undefined" || !tok || tok === "")
+				alert("Something went wrong");
+			else
+				location.href = "/pronite/passbook";
+			}
+    }
+}
+
+window.addEventListener("load", function() {
+
+    // signal the parent that we're loaded.
+    window.parent.postMessage("loaded", "*")
+    console.log("sent loaded msg");
+window.addEventListener("message", receiveMessage,false);
+},false);
+</script>
+
