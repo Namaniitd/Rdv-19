@@ -27,11 +27,11 @@ $(document).ready(function () {
             if ($(this).val().length === 0) {
                 $(this).siblings('span.error').text('Please type your full name').fadeIn().parent('.form-group').addClass('hasError');
                 usernameError = true;
-            } 
+            }
             // else if ($(this).val().length > 0 && $(this).val().length <= 6) {
             //     $(this).siblings('span.error').text('Please type at least 6 characters').fadeIn().parent('.form-group').addClass('hasError');
             //     usernameError = true;
-            // } 
+            // }
             else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
                 usernameError = false;
@@ -42,7 +42,7 @@ $(document).ready(function () {
             if ($(this).val().length === 0) {
                 $(this).siblings('span.error').text('Please type your Last name').fadeIn().parent('.form-group').addClass('hasError');
                 usernameError = true;
-            } 
+            }
             // else if ($(this).val().length > 1 && $(this).val().length <= 3) {
             //     $(this).siblings('span.error').text('Please type at least 3 characters').fadeIn().parent('.form-group').addClass('hasError');
             //     usernameError = true;
@@ -63,10 +63,10 @@ $(document).ready(function () {
                 emailError = false;
             }
         }
-		
+
 		if ($(this).hasClass('phone')) {
             if ($(this).val().length < '10') {
-                $(this).siblings('span.error').text('Please Enter your phne number').fadeIn().parent('.form-group').addClass('hasError');
+                $(this).siblings('span.error').text('Please Enter your phone number').fadeIn().parent('.form-group').addClass('hasError');
                 PhoneError = true;
             } else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
@@ -77,7 +77,7 @@ $(document).ready(function () {
             if ($(this).val().length === 0) {
                 $(this).siblings('span.error').text('Please specify your institute').fadeIn().parent('.form-group').addClass('hasError');
                 usernameError = true;
-            } 
+            }
             // else if ($(this).val().length > 1 && $(this).val().length <= 4) {
             //     $(this).siblings('span.error').text('Please type at least 4 characters').fadeIn().parent('.form-group').addClass('hasError');
             //     usernameError = true;
@@ -100,7 +100,7 @@ $(document).ready(function () {
         }
 
         // PassWord confirmation
-                    var passw = $('#passwordCon'); 
+                    var passw = $('#passwordCon');
 
         if ($('.pass').val() !== $('.passConfirm').val()) {
             $('.passConfirm').siblings('.error').text('Passwords don\'t match').fadeIn().parent('.form-group').addClass('hasError');
@@ -142,7 +142,7 @@ $(document).ready(function () {
     //     if (usernameError == true || emailError == true || passwordError == true || passConfirm == true) {
     //         $('.name, .email, .pass, .passConfirm').blur();
     //     } else {
-            
+
     //         $('.signup, .login').addClass('switched');
 
     //         setTimeout(function () { $('.signup, .login').hide(); }, 700);
