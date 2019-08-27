@@ -1,18 +1,18 @@
 .slidebutton:hover,
 .slidebutton:focus {
-  box-shadow: inset 10.5em 0 0 0  #ddb388;
+  box-shadow: inset 10.5em 0 0 0  var(--main-color-primary);
 }
 .slidebutton {
- 	color: #ddb388;
+ 	color: var(--main-color-primary);
 
 }
 button {
-  color: #ddb388;
+  color: var(--main-color-primary);
   transition: 0.5s !important;
 	-webkit-transition-timing:.5s !important;
 }
 button:hover{
-  border-color: #ddb388 !important;
+  border-color: var(--main-color-primary) !important;
   color: black !important;
 }
 
