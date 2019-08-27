@@ -39,7 +39,7 @@ class Home extends Component {
   }
   getNumDays() {
     var curDate = new Date();
-    var rdvDate = new Date("2018/10/13");
+    var rdvDate = new Date("2019/10/02");
     return Math.ceil((rdvDate - curDate) / (1000*60*60*24));
   }
   render() {
