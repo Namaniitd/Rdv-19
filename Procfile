@@ -1,1 +1,0 @@
-web: . ./env.sh && nodemon
