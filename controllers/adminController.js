@@ -8,7 +8,7 @@ const dynamoDB = utils.connectToDB();
 
 function params(email) {
   return {
-    TableName: '2018_RDV_Team',
+    TableName: '2019_RDV_Team',
     Key: {
       "email": email,
     }

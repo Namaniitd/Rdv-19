@@ -8,7 +8,7 @@ const crypto = require('crypto');
 const _ = require('underscore');
 
 const dynamoDB = utils.connectToDB();
-const tableName = '2018_RDV_Team';
+const tableName = '2019_RDV_Team';
 const secret = require('../Models/secrets');
 
 

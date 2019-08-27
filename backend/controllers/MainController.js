@@ -162,14 +162,14 @@ function proniteLogin(req,res){
 function params(key, id) {
   if (key == 'rdv_number') {
     return {
-      TableName: '2018_RDV_Registrations',
+      TableName: '2019_RDV_Registrations',
       Key: {
         rdv_number: id,
       },
     }
   } else {
     return {
-      TableName: '2018_RDV_Registrations',
+      TableName: '2019_RDV_Registrations',
       IndexName: 'email',
       KeyConditionExpression: 'email = :value',
       ExpressionAttributeValues: {

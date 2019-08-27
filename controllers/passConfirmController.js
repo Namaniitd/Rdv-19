@@ -24,7 +24,7 @@ let crypto = require('crypto');
 let hummus = require('hummus');
 
 let dynamoDB = utils.connectToDB();
-let tableName = '2018_RDV_Registrations';
+let tableName = '2019_RDV_Registrations';
 
 
 confirmPass.confirm = function (req, res) {
@@ -770,14 +770,14 @@ function onRegScan(res, registrations, lastEvaluatedKey, num, pronite, cb) {
 function params (key, id) {
   if (key == 'rdv_number') {
     return {
-      TableName: '2018_RDV_Registrations',
+      TableName: '2019_RDV_Registrations',
       Key: {
         rdv_number: id
       }
     }
   } else {
     return {
-      TableName: '2018_RDV_Registrations',
+      TableName: '2019_RDV_Registrations',
       IndexName: 'email',
       KeyConditionExpression: 'email = :value',
       ExpressionAttributeValues: {

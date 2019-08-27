@@ -4,7 +4,7 @@
 const utils = require('../utils');
 const jwt = require('jsonwebtoken');
 // Db info
-const teamName = '2018_RDV_Team'
+const teamName = '2019_RDV_Team'
 const dynamoDB = utils.connectToDB();
 
 const secret = require('../Models/secrets');

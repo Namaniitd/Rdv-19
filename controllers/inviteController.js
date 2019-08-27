@@ -14,7 +14,7 @@ const secret = require('../Models/secrets');
 let inviteMailer = require('../mailers/inviteMailer');
 
 let dynamoDB = utils.connectToDB();
-let tableName = '2018_RDV_Registrations';
+let tableName = '2019_RDV_Registrations';
 
 function invite(req, res) {
   let token = req.query.token;

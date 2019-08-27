@@ -12,7 +12,7 @@ const request = require('request');
 const secret = require('../Models/secrets');
 // Db settings 
 const dynamoDB = utils.connectToDB();
-const tableName = '2018_RDV_Registrations';
+const tableName = '2019_RDV_Registrations';
 
 const verificationMailer = require('../mailers/verificationMailer');
 const welcomeMailer = require('../mailers/welcomeMailer');
@@ -66,14 +66,14 @@ function onRegScan(res, registrations, lastEvaluatedKey, num, cb) {
 function params(key, id) {
   if (key == 'rdv_number') {
     return {
-      TableName: '2018_RDV_Registrations',
+      TableName: '2019_RDV_Registrations',
       Key: {
         rdv_number: id,
       },
     }
   } else {
     return {
-      TableName: '2018_RDV_Registrations',
+      TableName: '2019_RDV_Registrations',
       IndexName: 'email',
       KeyConditionExpression: 'email = :value',
       ExpressionAttributeValues: {
@@ -134,7 +134,7 @@ function register1(req, res) {
     // user.college = 'IIT Delhi';
 
   const queryParams = {
-    TableName: '2018_RDV_Registrations',
+    TableName: '2019_RDV_Registrations',
     IndexName: 'email',
     KeyConditionExpression: 'email = :value',
     ExpressionAttributeValues: {
@@ -243,7 +243,7 @@ function register(req, res) {
     user.college = 'IIT Delhi';
 
   const queryParams = {
-    TableName: '2018_RDV_Registrations',
+    TableName: '2019_RDV_Registrations',
     IndexName: 'email',
     KeyConditionExpression: 'email = :value',
     ExpressionAttributeValues: {
@@ -464,7 +464,7 @@ function forgotPassword(email) {
   const hashPassword = crypto.createHash('md5').update(password).digest('hex')
 
   const queryParams = {
-    TableName: '2018_RDV_Registrations',
+    TableName: '2019_RDV_Registrations',
     IndexName: 'email',
     KeyConditionExpression: 'email = :value',
     ExpressionAttributeValues: {

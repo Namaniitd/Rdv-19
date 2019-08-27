@@ -5,7 +5,7 @@ let utils = require('../utils');
 let rdvPoints = module.exports = {};
 
 let dynamoDB = utils.connectToDB();
-let tableName = '2018_RDV_Registrations';
+let tableName = '2019_RDV_Registrations';
 
 rdvPoints.set = function (req, res) {
 	let user = req.body;

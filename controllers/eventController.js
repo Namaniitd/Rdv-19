@@ -4,8 +4,8 @@ const fs = require('fs');
 
 //Db
 const dynamoDB = utils.connectToDB();
-const tableName = '2018_RDV_Events';
-const tableName2 = '2018_RDV_Registrations';
+const tableName = '2019_RDV_Events';
+const tableName2 = '2019_RDV_Registrations';
 // secret keys
 const secret = require('../Models/secrets');
 
