@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const request = require('request');
 const secret = require('../Models/secrets');
-// Db settings 
+// Db settings
 const dynamoDB = utils.connectToDB();
 const tableName = '2019_RDV_Registrations';
 
@@ -30,7 +30,7 @@ function getRegistrations(req, res) {
   })
 }
 
-// returns array of registration 
+// returns array of registration
 // gives rdvNumber,email,firstname,lastname,college ,number,gender,reqTiem,points
 function onRegScan(res, registrations, lastEvaluatedKey, num, cb) {
   let params = {
@@ -303,7 +303,7 @@ function register(req, res) {
 function addUser(res, user, rdv_points) {
   //console.log("--- in add user ---")
   user.rdv_number = generateRDVNumber(user.first_name, user.last_name);
-  user.registered_events = [{id: "rdv18", name: "Rendezvous"}];
+  user.registered_events = [{id: "rdv19", name: "Rendezvous"}];
   user.reg_time = (new Date()).toString();
   user.rdv_points = rdv_points;
   const addParams = {
@@ -434,7 +434,7 @@ function getCount(res, regCount, lastEvaluatedKey, num, cb) {
     dynamoDB.scan(params, function (err, data) {
       if (err) {
         // throw err
-        // console.log(err ) 
+        // console.log(err )
         return utils.error(res, 500, "Internal Server Error");
       } else {
         getCount(res, regCount + data.Count, data.LastEvaluatedKey, num + 1, cb);
@@ -561,7 +561,7 @@ function changePassword (req, res) {
             console.log("%s: Password changed for %s", utils.logTime(), email);
             return res.json({
               error: false,
-              message: "Password changed successfully!", 
+              message: "Password changed successfully!",
             });
           }
         });

@@ -28,7 +28,7 @@ const request = require('request');
 
 let dynamoDB = utils.connectToDB();
 let tableName = '2019_RDV_Registrations';
-let tableName1 = '2018_Pronite_Reg';
+let tableName1 = '2019_Pronite_Reg';
 
 bookPass.book = function (req, res) {
   console.log("req recieved")
