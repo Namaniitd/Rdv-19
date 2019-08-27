@@ -290,8 +290,8 @@ function deleteEvent (req, res) {
 function uploadPhoto(req, res) {
   // console.log("do not way out+  "+process.env.ACCESS_KEY)S
   AWS.config.update({
-    accessKeyId: "AKIAIMEEAD3XNEOEMZZQ",
-    secretAccessKey: "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",
+    accessKeyId: process.env.ACCESS_KEY,
+    secretAccessKey: process.env.SECRET_KEY,
     region: "ap-south-1",
     endpoint: new AWS.Endpoint('https://s3.ap-south-1.amazonaws.com'),
   });

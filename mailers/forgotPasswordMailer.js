@@ -5,8 +5,8 @@
 var AWS = require('aws-sdk');
 const utils = require('../utils');
 var SES = new AWS.SES({
-  accessKeyId: "AKIAIMEEAD3XNEOEMZZQ",
-  secretAccessKey: "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",
+  accessKeyId: process.env.ACCESS_KEY,
+  secretAccessKey: process.env.SECRET_KEY,
   region: "us-west-2",
   endpoint: new AWS.Endpoint('https://email.us-west-2.amazonaws.com')
 });
