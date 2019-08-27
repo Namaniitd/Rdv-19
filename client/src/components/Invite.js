@@ -31,7 +31,7 @@ class Invite extends Component {
     this.updateUserFromServer(token);
   }
   updateUserFromServer = (token) => {
-    $.post("http://www.rdv-iitd.com/api/login?token=" + token, (data) => {
+    $.post("http://www.rdviitd.org/api/login?token=" + token, (data) => {
       if (data.error)
         this.setState({error: data.message});
       else
@@ -57,7 +57,7 @@ class Invite extends Component {
       this.setState({error: "Please select a Pronite"});
     if (!this.state.email)
       this.setState({error: "Please enter an Email"});
-    $.post("http://www.rdv-iitd.com/api/pronite/invite?token=" + this.state.token + "&pronite=" + this.state.pronite + "&email=" + this.state.email, (data) => {
+    $.post("http://www.rdviitd.org/api/pronite/invite?token=" + this.state.token + "&pronite=" + this.state.pronite + "&email=" + this.state.email, (data) => {
       if (data.error)
         this.setState({error: data.message});
       else {

@@ -27,7 +27,7 @@ function sendMail(email, name, otp) {
         Data: "OTP for Rendezvous Registration!"
       }
     },
-    Source: "Rendezvous Verification \<verification@rdv-iitd.com\>",
+    Source: "Rendezvous Verification \<verification@rdviitd.org\>",
   };
   SES.sendEmail(params, function (err, data) {
     if (err) {

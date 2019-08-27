@@ -243,7 +243,7 @@ bookPass.waitListBook = function (req, res) {
 
     let rdvNumber = user.rdv_number;
     // for header checking
-    // if (!req.headers.referer || !req.headers.referer.startsWith('http://rdv-iitd.com/bohogetaway')) {
+    // if (!req.headers.referer || !req.headers.referer.startsWith('http://rdviitd.org/bohogetaway')) {
     //   console.log('%s: %s is using a script.', utils.logTime(), rdvNumber);
     //   return utils.error(res, 400, "Something went wrong. Please try again soon.");
     // }

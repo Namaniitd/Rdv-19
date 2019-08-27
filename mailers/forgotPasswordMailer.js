@@ -29,7 +29,7 @@ function sendMail(email, name, rdvNumber, password) {
         Data: "Password Changed for Rendezvous Account"
       }
     },
-    Source: "Rendezvous Password \<support@rdv-iitd.com\>",
+    Source: "Rendezvous Password \<support@rdviitd.org\>",
   };
   SES.sendEmail(params, function (err, data) {
     if (err) {
