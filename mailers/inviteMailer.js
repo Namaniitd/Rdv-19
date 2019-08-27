@@ -24,12 +24,12 @@ function sendMail(email) {
 					"<ul><li>Visit: <a href='http://rdviitd.org/login'> RDV-login</a> to register with us and earn RDV points. Stand a chance to win pronite passes, exclusive merchandise and much more.</li><br>"+
 					"<li>To book your accommodation, go to: <a href='rdviitd.org/accommodation'>rdviitd.org/accommodation</a></li><br>"+
 					"<li>For more updates, follow us on :<br>Facebook: <a href='https://www.facebook.com/rendezvous.iitd/'>https://www.facebook.com/rendezvous.iitd/</a><br>"+
-					"Instagram: <a href='https://www.instagram.com/rendezvous.iitdelhi/'> https://www.instagram.com/rendezvous.iitdelhi/</a><br></li><br>"+
+					"Instagram: <a href='https://www.instagram.com/rendezvous.iitd/'> https://www.instagram.com/rendezvous.iitd/</a><br></li><br>"+
 					"See you there!"   +
 					'<p><img src="https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-899753036576/rdv-logo.png" alt="" height="60px" align="left" /> <strong>Rendezvous 2018 | IIT Delhi</strong><br />North India\'s Largest Cultural Fest<br />' +
           			'<a href="https://www.facebook.com/rendezvous.iitd"><img src="https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-899753036576/svg/facebook.png" alt="" height="15px" /></a> ' +
           			'<a href="https://twitter.com/theRDVstory"><img src="https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-899753036576/svg/twitter.png" alt="" height="15px" /></a> ' +
-          			'<a href="https://www.instagram.com/rendezvous.iitdelhi"><img src="https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-899753036576/svg/instagram.png" alt="" height="15px" /></a></p>',		
+          			'<a href="https://www.instagram.com/rendezvous.iitd"><img src="https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-899753036576/svg/instagram.png" alt="" height="15px" /></a></p>',		
     			},
     	},
     	Subject:{
