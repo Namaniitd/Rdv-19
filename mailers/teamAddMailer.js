@@ -29,7 +29,7 @@ function sendMail(member, password) {
     },Subject: {
         Data: "Hello from Rendezvous Admin Portal!"
       }
-    },Source: "Rendezvous Registration \<admin@rdviitd.org\>",
+    },Source: "Rendezvous Team \<admin@rdviitd.org\>",
   };
 SES.sendEmail(params, function (err, data) {
     if (err) {
