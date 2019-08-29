@@ -82,7 +82,7 @@ function sendInvite(req, res, email, user, pronite) {
       } else {
         return res.json({
           error: false,
-          message: 'Invitation sent successfully! If your invitee doesn\'t receive a mail, you can send them the following link: http://rdviitd.org/api/invitee-pdf?qr=' + qr
+          message: 'Invitation sent successfully! If your invitee doesn\'t receive a mail, you can send them the following link: https://rdviitd.org/api/invitee-pdf?qr=' + qr
         });
       }
     });

@@ -20,7 +20,7 @@ function sendMail(member, password) {
       Body: {
         Html: {
           Data: 'Hey ' + member.name + ', <br/><br/>Congratulations on being selected as the <b>' + member.designation +
-        '</b> for Rendezvous! You can access your admin account at http://rdviitd.org/admin with the following credentials.' +
+        '</b> for Rendezvous! You can access your admin account at https://rdviitd.org/admin with the following credentials.' +
         '<br/><br/><p style="text-indent: 6em;margin: 0;padding: 0"><b>Username:</b> ' + member.email + '</p>' +
         '<p style="text-indent: 6em;margin: 0;padding: 0"><b>Password:</b> ' + password + '</p><br/>' +
         'You\'re recommended to change your password after logging in. ' +

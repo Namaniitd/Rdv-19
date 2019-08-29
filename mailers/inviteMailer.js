@@ -21,8 +21,8 @@ function sendMail(email) {
     		Html: {
     			Data: "Greetings!<br>"+ "IIT Delhi is back with another edition of Rendezvous, ‘A Mystical Odyssey’ with the journey spanning over 4 days from 2nd-5th October. We would like to officially invite you to join us for yet another season of unlimited fun with a myriad of events ranging from Fashion, Dance and Music to Culinary Arts, Adventure and many more.<br><br>" +
     				"Think about the moments of the past, let your memory flow over them like water, let that familiar scent of grass take over as you join us to cherish that feeling- romance with the past, spin it around, take another look at that vintage film in black and white.Come experience the extravaganza!" +
-					"<ul><li>Visit: <a href='http://rdviitd.org/login'> RDV-login</a> to register with us and earn RDV points. Stand a chance to win pronite passes, exclusive merchandise and much more.</li><br>"+
-					"<li>To book your accommodation, go to: <a href='rdviitd.org/accommodation'>rdviitd.org/accommodation</a></li><br>"+
+					"<ul><li>Visit: <a href='https://rdviitd.org/login'> RDV-login</a> to register with us and earn RDV points. Stand a chance to win pronite passes, exclusive merchandise and much more.</li><br>"+
+					"<li>To book your accommodation, go to: <a href='https://rdviitd.org/accommodation'>rdviitd.org/accommodation</a></li><br>"+
 					"<li>For more updates, follow us on :<br>Facebook: <a href='https://www.facebook.com/rendezvous.iitd/'>https://www.facebook.com/rendezvous.iitd/</a><br>"+
 					"Instagram: <a href='https://www.instagram.com/rendezvous.iitd/'> https://www.instagram.com/rendezvous.iitd/</a><br></li><br>"+
 					"See you there!"   +

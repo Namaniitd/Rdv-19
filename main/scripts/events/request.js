@@ -18,7 +18,7 @@ professional = [];
 magic = [];
 
 
-$.get( "http://rdviitd.org/api/event").done(function( data) {
+$.get( "https://rdviitd.org/api/event").done(function( data) {
   for(var i=0;i<data.events.length;i++){
     // console.log(data.events[i].category)
     if(data.events[i].category=="literary") literary.push(data.events[i])
