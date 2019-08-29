@@ -9,7 +9,7 @@ body {
 
 .wrapper {
   perspective: 0px;
-  background-image: url('http://svgur.com/i/6f.svg');
+  background-image: url('https://svgur.com/i/6f.svg');
   width: 100%;
   height: 100%;
 }
@@ -83,7 +83,7 @@ body {
 #pole {
   width: 25px;
   height: 195px;
-  background-image: url('http://svgur.com/i/4k.svg');
+  background-image: url('https://svgur.com/i/4k.svg');
   position: absolute;
   left: 0;
   background-size: cover;
@@ -145,7 +145,7 @@ body {
   height: 155px;
   width: 95px;
   transform-origin: center;
-  background-image: url('http://svgur.com/i/6e.svg');
+  background-image: url('https://svgur.com/i/6e.svg');
 }
 
 .hors {
