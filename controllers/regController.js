@@ -83,120 +83,8 @@ function params(key, id) {
   }
 }
 
-
-function register1(req, res) {
-  const user = req.body;
-  console.log(user);
-  console.log("problemsssss here")
-  console.log("in register\n");
-  if (!user)
-    return utils.error(res, 400, "Invalid Data");
-  if (!user.email)
-    return utils.error(res, 400, "Please enter Email Address");
-
-  user.email = user.email.toLowerCase();
-  if (!user.email.match(/^[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/)) {
-    console.log('%s: Invalid email entered - %s', utils.logTime(), user.email);
-    return utils.error(res, 400, "Please enter a valid Email Address");
-  }
-  if (!user.first_name)
-    return utils.error(res, 400, "Please enter First Name");
-  if (!user.first_name.match(/^[A-Za-z ]+$/))
-    return utils.error(res, 400, "Name cannot contain Special Characters");
-  if (!user.last_name)
-    return utils.error(res, 400, "Please enter Last Name");
-  if (!user.last_name.match(/^[A-Za-z ]+$/))
-    return utils.error(res, 400, "Name cannot contain Special Characters");
-  if (!user.password)
-    return utils.error(res, 400, "Please enter Password");
-
-  const secretKey = secret.clever;
-  const email = user.email;
-  const name = user.first_name + " " + user.last_name;
-  const generatedOTP = crypto.createHash('md5').update(email + secretKey).digest('hex').substring(0,6);
-
-  user.otp = generatedOTP;
-
-  if (!user.otp) {
-    verificationMailer.sendMail(email, name, generatedOTP);
-    return utils.error(res, 401, "Email Verification Required");
-  }
-  if (user.otp != generatedOTP)
-    return utils.error(res, 401, "Incorrect OTP");
-  delete user.otp;
-
-  delete user.dhoom;
-  delete user.spectrum;
-  delete user.melange;
-  delete user.kaleidoscope;
-
-  // if (user.college === 'IIT Delhi Staff')
-    // user.college = 'IIT Delhi';
-
-  const queryParams = {
-    TableName: '2019_RDV_Registrations',
-    IndexName: 'email',
-    KeyConditionExpression: 'email = :value',
-    ExpressionAttributeValues: {
-      ':value': user.email,
-    },
-  };
-  if(user.referral_code == ''){
-    delete user.referral_code;
-  }
-// console.log("--- line 143");
-  dynamoDB.query(queryParams, function (err, data) {
-    if (err) {
-      console.log(err)
-      return utils.error(res, 500, "Internal Server Error");
-    } else {
-      if (data.Items.length !== 0)
-        return utils.error(res, 400, "Member with Email Address already exists");
-      else {
-        if (!user.referral_code)
-          addUser(res, user, 200);
-        else if (user.referral_code.match(/^RDV[a-z0-9]{5}$/)) {
-          const secretKey2 = secret.referal;
-          const code = 'RDV' + crypto.createHash('md5').update(email + secretKey2).digest('hex').substring(0,5);
-          if (code === user.referral_code)
-            addUser(res, user, 400);
-          else
-            return utils.error(res, 400, "Invalid Referral Code");
-        }
-        else if (user.referral_code.match(/^RDV[A-Z]{2}[0-9]{5}$/)) {
-          let refParams = {
-            TableName: tableName,
-            Key: {
-              'rdv_number': user.referral_code,
-            },
-            ConditionExpression: 'attribute_exists(rdv_number)',
-            UpdateExpression: 'SET rdv_points = rdv_points + :value',
-            ExpressionAttributeValues: {
-              ':value': 100,
-            },
-          };
-          dynamoDB.update(refParams, function (err, data) {
-            if (err) {
-              return utils.error(res, 400, "Invalid Referral Code");
-            } else {
-              delete user.referral_code;
-              addUser(res, user, 200);
-            }
-          });
-        }
-        else
-          return utils.error(res, 400, "Invalid Referral Code");
-      }
-    }
-  })
-}
-
-
-
 function register(req, res) {
   const user = req.body;
-  console.log(user);
-  console.log("in register\n");
   if (!user)
     return utils.error(res, 400, "Invalid Data");
   if (!user.email)
@@ -220,13 +108,10 @@ function register(req, res) {
 
   const secretKey = secret.clever;
   const email = user.email;
-  const name = user.first_name + " " + user.last_name;
   const generatedOTP = crypto.createHash('md5').update(email + secretKey).digest('hex').substring(0,6);
 
-  if (req.headers.origin === 'http://brca.iitd.ac.in')
-    user.otp = generatedOTP;
-
   if (!user.otp) {
+    const name = user.first_name + " " + user.last_name;
     verificationMailer.sendMail(email, name, generatedOTP);
     return utils.error(res, 401, "Email Verification Required");
   }
@@ -238,9 +123,6 @@ function register(req, res) {
   delete user.spectrum;
   delete user.melange;
   delete user.kaleidoscope;
-
-  if (user.college === 'IIT Delhi Staff' && req.headers.origin !== 'http://brca.iitd.ac.in')
-    user.college = 'IIT Delhi';
 
   const queryParams = {
     TableName: '2019_RDV_Registrations',
@@ -595,7 +477,6 @@ function recaptcha (req, res) {
 module.exports = {
   login: login,
   register: register,
-  register1: register1,
   recaptcha: recaptcha,
   changePassword: changePassword,
   getRegCount: getRegCount,

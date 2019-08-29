@@ -54,7 +54,6 @@ app.get('/api/admin/validate-token', sessionController.validateToken);
 
 // REg APIS
 app.post('/api/register', regController.register);
-app.post('/api/register1', regController.register1);
 app.post('/api/login', regController.login);
 app.post('/api/forgot', regController.forgotPassword);
 app.post('/api/change', regController.changePassword);
