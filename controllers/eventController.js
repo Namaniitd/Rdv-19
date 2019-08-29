@@ -285,48 +285,41 @@ function deleteEvent (req, res) {
     }
   })
 }
-
-// Upload images on aws @review
+// Upload images on aws
 function uploadPhoto(req, res) {
-  // console.log("do not way out+  "+process.env.ACCESS_KEY)S
   AWS.config.update({
     accessKeyId: process.env.ACCESS_KEY,
     secretAccessKey: process.env.SECRET_KEY,
     region: "ap-south-1",
-    endpoint: new AWS.Endpoint('https://s3.ap-south-1.amazonaws.com'),
+    endpoint: new AWS.Endpoint('https://s3.ap-south-1.amazonaws.com')
   });
-  console.log("console from here - - -- - -")
-  // console.log(req.files);
-  // console.log(req.body.photo);
-  // console.log(req)
   let s3Bucket = new AWS.S3();
-  let filename = req.files.photo.name;
-  // fs.readFile(req.files.file.path, (err, data) => {
-    // if (err) {
-    //   console.log(err);
-    //   fs.unlink(req.file.path, () => utils.error(res, 500, "Error Uploading Image"));
-    // }
-    let s3Data = {
-      ACL: "public-read",
-      Bucket: 'elasticbeanstalk-ap-south-1-899753036576',
-      Key: "event_images/" + filename,
-      Body: req.files.photo.data,
-      ContentType: "image/jpeg"
-    };
-    s3Bucket.putObject(s3Data, function(err, resp) {
-      console.log(resp);
-      if (err) {
-        console.log(err);
+  fs.readFile(req.file.path, (err, data) => {
+    if (err) {
         utils.error(res, 500, "Error Uploading Image");
-      } else {
-        res.json({
-          error: false,
-          message: "Image Uploaded successfully!",
-          img: "https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-899753036576/event_images/" + filename,
-        });
-      }
-    });
-  };
+    } else {
+      const params = {
+        ACL: "public-read",
+        Body: data,
+        Bucket: 'rdv-website-assets',
+        ContentType: "image/jpeg",
+        Key: "images/events/" + req.file.originalname
+      };
+      s3Bucket.putObject(params, (err, data) => {
+        if (err) {
+          utils.error(res, 500, "Error Uploading Image");
+        } else {
+          res.json({
+            error: false,
+            message: "Image Uploaded successfully!",
+            img: "https://assets.rdviitd.org/images/events/" + req.file.originalname
+          });
+        }
+      });
+      fs.unlink(req.file.path);
+    }
+  });
+};
 
 //Event Registrations
 function eventReg(req, res) {
@@ -396,7 +389,7 @@ function addUserToEvent(res, event, reg) {
   // console.log("life crzzzz")
   // console.log(typeof(userData))
   if(typeof(userData)!="string")
-    userData = userData.filter(String); 
+    userData = userData.filter(String);
   // console.log(userData);
   //Till here there  are only checks and balances
   // Real work starts here
@@ -417,7 +410,7 @@ function addUserToEvent(res, event, reg) {
     if (event.reg_max_team_size && userData.length > event.reg_max_team_size)
       return utils.error(res, 400, "This event allows a maximum of " + event.reg_max_team_size + " team members");
     // console.log("been here atleaset 1");
-    
+
     verifyTeam(res, userData, 0, [], event, function (users) {
       users = users.map(function (user) {
         let u = Object.assign({}, user);
@@ -468,7 +461,7 @@ function addUsersToEventDatabase(res, users, event) {
   })
 }
 
-// Adding  event to user db for easy access infuture 
+// Adding  event to user db for easy access infuture
 function addEventToUsers(users, event) {
   for (let i = 0; i < users.length; i++) {
     let addParams = {

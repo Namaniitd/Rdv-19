@@ -224,7 +224,7 @@ class DetailedInfo extends Component {
               containerElement='label'
               disabled={!this.props.data.id}
               label='Upload Image 1'>
-              <input name="file" type="file" onChange={this.props.uploadPhoto(0)} disabled={!this.props.data.id} style={{display: "none"}}/>
+              <input name="file" type="file" accept=".jpg, .jpeg" onChange={this.props.uploadPhoto(0)} disabled={!this.props.data.id} style={{display: "none"}}/>
             </RaisedButton>}
             {!(this.props.data.photos[0] === 'None') &&
             <div>
@@ -244,7 +244,7 @@ class DetailedInfo extends Component {
               containerElement='label'
               disabled={!this.props.data.id}
               label='Upload Image 2'>
-              <input name="file" type="file" onChange={this.props.uploadPhoto(1)} disabled={!this.props.data.id} style={{display: "none"}}/>
+              <input name="file" type="file" accept=".jpg, .jpeg" onChange={this.props.uploadPhoto(1)} disabled={!this.props.data.id} style={{display: "none"}}/>
             </RaisedButton>}
             {!(this.props.data.photos[1] === 'None') &&
             <div>
@@ -264,7 +264,7 @@ class DetailedInfo extends Component {
               containerElement='label'
               disabled={!this.props.data.id}
               label='Upload Image 3'>
-              <input name="file" type="file" onChange={this.props.uploadPhoto(2)} disabled={!this.props.data.id} style={{display: "none"}}/>
+              <input name="file" type="file" accept=".jpg, .jpeg" onChange={this.props.uploadPhoto(2)} disabled={!this.props.data.id} style={{display: "none"}}/>
             </RaisedButton>}
             {!(this.props.data.photos[2] === 'None') &&
             <div>
@@ -284,7 +284,7 @@ class DetailedInfo extends Component {
               containerElement='label'
               disabled={!this.props.data.id}
               label='Upload Image 4'>
-              <input name="file" type="file" onChange={this.props.uploadPhoto(3)} disabled={!this.props.data.id} style={{display: "none"}}/>
+              <input name="file" type="file" accept=".jpg, .jpeg" onChange={this.props.uploadPhoto(3)} disabled={!this.props.data.id} style={{display: "none"}}/>
             </RaisedButton>}
             {!(this.props.data.photos[3] === 'None') &&
             <div>
@@ -452,27 +452,20 @@ class EventCreate extends Component {
   };
   handleUploadPhoto = (index) => (event) => {
     const photoData = new FormData();
-    if (event.target.files[0].size > 200 * 1024) {
-      this.setState({error: "Photo cannot be larger than 200KB"});
+    if (event.target.files[0].size > 1024 * 1024) {
+      this.setState({error: "Photo cannot be larger than 1MB"});
       return;
     }
-   // event.target.files[0].name = ""+this.state.id + "_" + (index+1)+"";
-    photoData.append('photo', event.target.files[0]);
-    console.log(this.state.id + "_" + (index+1));
-    photoData.append('filename', this.state.id + "_" + (index+1));
-    //console.log(photoData);
-    //console.log(photoData.get('filename'));
-    //console.log(photoData.get('photo'));
-    uploadPhoto(photoData)
-      .then(function (response) {
-        if (!response.error) {
-          let photos = this.state.photos;
-          photos[index] = response.img;
-          this.setState({photos: photos, error: response.message});
-        }
-        else
-          this.setState({error: response.message});
-      }.bind(this));
+    photoData.append('photo', event.target.files[0], this.state.id + "_" + (index + 1) + ".jpg");
+    uploadPhoto(photoData).then((res) => {
+      if (!res.error) {
+        let photos = this.state.photos;
+        photos[index] = res.img;
+        this.setState({photos: photos, error: res.message});
+      } else {
+        this.setState({error: res.message});
+      }
+    }).bind(this);
   };
   handleRemovePhoto = (index) => () => {
     let photos = this.state.photos;
