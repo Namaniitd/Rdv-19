@@ -2,7 +2,7 @@
  * Created by Nikhil on 28/05/17.
  */
 import queryString from 'query-string'
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import IconButton from 'material-ui/IconButton'
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
@@ -21,6 +21,10 @@ import { uploadPhoto, addEvent, getEvent } from '../utils/eventAPI'
 import { getCategories } from '../utils/categoryAPI'
 import Error from './Error'
 import Loading from './Loading'
+import Dialog from 'material-ui/Dialog';
+import ReactCrop from "react-image-crop";
+import "react-image-crop/dist/ReactCrop.css";
+
 
 class DateTimeVenueRow extends Component {
   render() {
@@ -80,6 +84,134 @@ class DateTimeVenueRow extends Component {
       </div>
 
     )
+  }
+}
+
+class ImageUpload extends PureComponent {
+  state = {
+    src: null,
+    crop: {
+      aspect: 16/9,
+      height: 1080,
+      width: 1920
+    }
+  };
+
+  onSelectFile = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const reader = new FileReader();
+      reader.addEventListener("load", () => this.setState({
+        src: reader.result
+      }));
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  };
+
+  onImageLoaded = (image) => {
+    this.imageRef = image;
+  };
+
+  onCropChange = (crop, percentCrop) => {
+    this.setState({crop});
+  };
+
+  onCropComplete = (crop) => {
+    this.setState({croppedImageUrl: null})
+    this.makeClientCrop(crop);
+  };
+
+  async makeClientCrop(crop) {
+    if (this.imageRef && crop.width && crop.height) {
+      const croppedImageUrl = await this.getCroppedImg(this.imageRef, crop, this.props.fileName);
+      this.setState({croppedImageUrl});
+    }
+  }
+
+  getCroppedImg(image, crop, fileName) {
+    const canvas = document.createElement("canvas");
+    const scaleX = image.naturalWidth / image.width;
+    const scaleY = image.naturalHeight / image.height;
+    canvas.width = 1920;
+    canvas.height = 1080;
+    const ctx = canvas.getContext("2d");
+
+    ctx.drawImage(
+      image,
+      crop.x * scaleX,
+      crop.y * scaleY,
+      crop.width * scaleX,
+      crop.height * scaleY,
+      0,
+      0,
+      1920,
+      1080
+    );
+
+    return new Promise((resolve, reject) => {
+      canvas.toBlob(blob => {
+        if (!blob) {
+          return;
+        }
+        blob.name = fileName;
+        window.URL.revokeObjectURL(this.fileUrl);
+        this.fileUrl = window.URL.createObjectURL(blob);
+        resolve(this.fileUrl);
+      }, "image/jpeg");
+    });
+  }
+
+  render() {
+    const {crop, src} = this.state;
+    const actions = [
+      <FlatButton
+        label="Back"
+        primary={true}
+        onClick={this.props.handleClose}
+      />,
+      <FlatButton
+        label="View"
+        disabled={this.props.image == "None"}
+        primary={true}
+        href={this.props.image}
+      />,
+      <FlatButton
+        label="Delete"
+        disabled={this.props.image == "None"}
+        primary={true}
+        onClick={this.props.removePhoto}
+      />,
+      <FlatButton
+        label="Upload"
+        disabled={this.state.croppedImageUrl == null}
+        primary={true}
+        keyboardFocused={true}
+        onClick={() => this.props.savePhoto(this.state.croppedImageUrl)}
+      />
+    ];
+
+    return <div>
+      <Dialog
+        title="Upload Image"
+        open={true}
+        modal={true}
+        actions={actions}
+        contentStyle={{width: "80%", maxWidth: "1400px"}}
+        autoScrollBodyContent={true}
+      >
+        <div style={{textAlign: 'center'}}>
+          <RaisedButton
+            containerElement='label'
+            label='Choose Image'
+            style={{width: "10%", margin:"auto"}}
+            primary={true}>
+            <input type="file" accept="image/*" onChange={this.onSelectFile} style={{display: "none"}}/>
+          </RaisedButton>
+        </div>
+        <div style={{textAlign: 'center'}}>
+          {src && (<ReactCrop src={src} crop={crop} onImageLoaded={this.onImageLoaded} onChange={this.onCropChange} onComplete={this.onCropComplete}/>)}
+        </div>
+      </Dialog>
+    </div>;
   }
 }
 
@@ -175,6 +307,13 @@ class BasicInfo extends Component {
 }
 
 class DetailedInfo extends Component {
+  state = {
+    upload1: false,
+    upload2: false,
+    upload3: false,
+    upload4: false
+  }
+
   render() {
     return (
       <div style={{display: "flex", flexWrap: "wrap"}}>
@@ -219,84 +358,36 @@ class DetailedInfo extends Component {
         />
         <div style={{display: "flex", flexWrap: "wrap", width: "80%", margin: "auto", marginTop: "20px"}}>
           <div style={{width: "20%", margin: "auto"}}>
-            {(this.props.data.photos[0] === 'None') &&
             <RaisedButton
               containerElement='label'
+              label='Image 1'
               disabled={!this.props.data.id}
-              label='Upload Image 1'>
-              <input name="file" type="file" accept=".jpg, .jpeg" onChange={this.props.uploadPhoto(0)} disabled={!this.props.data.id} style={{display: "none"}}/>
-            </RaisedButton>}
-            {!(this.props.data.photos[0] === 'None') &&
-            <div>
-              <a href={this.props.data.photos[0]} target="_blank" rel="noopener noreferrer" style={{width: "80%"}}>
-                <RaisedButton
-                  label='View Image 1'
-                />
-              </a>
-              <IconButton onClick={this.props.removePhoto(0)} style={{width: "10%"}}>
-                <Delete hoverColor="firebrick"/>
-              </IconButton>
-            </div>}
+              onClick={() => {this.setState({upload1: true})}}/>
+            {this.state.upload1 && <ImageUpload image={this.props.data.photos[0]} fileName={this.props.data.id + "_1.jpg"} handleClose={() => this.setState({upload1: false})} savePhoto={this.props.uploadPhoto(0)} removePhoto={this.props.removePhoto(0)}/>}
           </div>
           <div style={{width: "20%", margin: "auto"}}>
-            {(this.props.data.photos[1] === 'None') &&
             <RaisedButton
               containerElement='label'
+              label='Image 2'
               disabled={!this.props.data.id}
-              label='Upload Image 2'>
-              <input name="file" type="file" accept=".jpg, .jpeg" onChange={this.props.uploadPhoto(1)} disabled={!this.props.data.id} style={{display: "none"}}/>
-            </RaisedButton>}
-            {!(this.props.data.photos[1] === 'None') &&
-            <div>
-              <a href={this.props.data.photos[1]} target="_blank" rel="noopener noreferrer" style={{width: "80%"}}>
-                <RaisedButton
-                  label='View Image 2'
-                />
-              </a>
-              <IconButton onClick={this.props.removePhoto(1)} style={{width: "10%"}}>
-                <Delete hoverColor="firebrick"/>
-              </IconButton>
-            </div>}
+              onClick={() => {this.setState({upload2: true})}}/>
+            {this.state.upload2 && <ImageUpload image={this.props.data.photos[1]} fileName={this.props.data.id + "_2.jpg"} handleClose={() => this.setState({upload2: false})} savePhoto={this.props.uploadPhoto(1)} removePhoto={this.props.removePhoto(1)}/>}
           </div>
           <div style={{width: "20%", margin: "auto"}}>
-            {(this.props.data.photos[2] === 'None') &&
             <RaisedButton
               containerElement='label'
+              label='Image 3'
               disabled={!this.props.data.id}
-              label='Upload Image 3'>
-              <input name="file" type="file" accept=".jpg, .jpeg" onChange={this.props.uploadPhoto(2)} disabled={!this.props.data.id} style={{display: "none"}}/>
-            </RaisedButton>}
-            {!(this.props.data.photos[2] === 'None') &&
-            <div>
-              <a href={this.props.data.photos[2]} target="_blank" rel="noopener noreferrer" style={{width: "80%"}}>
-                <RaisedButton
-                  label='View Image 3'
-                />
-              </a>
-              <IconButton onClick={this.props.removePhoto(2)} style={{width: "10%"}}>
-                <Delete hoverColor="firebrick"/>
-              </IconButton>
-            </div>}
+              onClick={() => {this.setState({upload3: true})}}/>
+            {this.state.upload3 && <ImageUpload image={this.props.data.photos[2]} fileName={this.props.data.id + "_3.jpg"} handleClose={() => this.setState({upload3: false})} savePhoto={this.props.uploadPhoto(2)} removePhoto={this.props.removePhoto(2)}/>}
           </div>
           <div style={{width: "20%", margin: "auto"}}>
-            {(this.props.data.photos[3] === 'None') &&
             <RaisedButton
               containerElement='label'
+              label='Image 4'
               disabled={!this.props.data.id}
-              label='Upload Image 4'>
-              <input name="file" type="file" accept=".jpg, .jpeg" onChange={this.props.uploadPhoto(3)} disabled={!this.props.data.id} style={{display: "none"}}/>
-            </RaisedButton>}
-            {!(this.props.data.photos[3] === 'None') &&
-            <div>
-              <a href={this.props.data.photos[3]} target="_blank" rel="noopener noreferrer" style={{width: "80%"}}>
-                <RaisedButton
-                  label='View Image 4'
-                />
-              </a>
-              <IconButton onClick={this.props.removePhoto(3)} style={{width: "10%"}}>
-                <Delete hoverColor="firebrick"/>
-              </IconButton>
-            </div>}
+              onClick={() => {this.setState({upload4: true})}}/>
+            {this.state.upload4 && <ImageUpload image={this.props.data.photos[3]} fileName={this.props.data.id + "_4.jpg"} handleClose={() => this.setState({upload4: false})} savePhoto={this.props.uploadPhoto(3)} removePhoto={this.props.removePhoto(3)}/>}
           </div>
         </div>
       </div>
@@ -450,14 +541,13 @@ class EventCreate extends Component {
           this.setState({error: response.message});
       }.bind(this));
   };
-  handleUploadPhoto = (index) => (event) => {
+  handleUploadPhoto = (index) => async (imageURL) => {
+    const image = await fetch(imageURL)
+        .then((res) => res.arrayBuffer())
+        .then((buf) => new File([buf], this.state.id + "_" + (index + 1)+ ".jpg"))
     const photoData = new FormData();
-    if (event.target.files[0].size > 1024 * 1024) {
-      this.setState({error: "Photo cannot be larger than 1MB"});
-      return;
-    }
-    photoData.append('photo', event.target.files[0], this.state.id + "_" + (index + 1) + ".jpg");
-    uploadPhoto(photoData).then((res) => {
+    photoData.append('photo', image);
+    uploadPhoto(photoData).then(function(res) {
       if (!res.error) {
         let photos = this.state.photos;
         photos[index] = res.img;
@@ -465,7 +555,7 @@ class EventCreate extends Component {
       } else {
         this.setState({error: res.message});
       }
-    }).bind(this);
+    }.bind(this));
   };
   handleRemovePhoto = (index) => () => {
     let photos = this.state.photos;
