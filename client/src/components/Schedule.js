@@ -137,10 +137,10 @@ class Schedule extends Component {
               style={{width: "30%", margin: "auto"}}
             >
               <MenuItem value="All" primaryText="All"/>
-              <MenuItem value="Day 1 (13/10)" primaryText="Day 1 (13/10)"/>
-              <MenuItem value="Day 2 (14/10)" primaryText="Day 2 (14/10)"/>
-              <MenuItem value="Day 3 (15/10)" primaryText="Day 3 (15/10)"/>
-              <MenuItem value="Day 4 (16/10)" primaryText="Day 4 (16/10)"/>
+              <MenuItem value="Day 1 (02/10)" primaryText="Day 1 (02/10)"/>
+              <MenuItem value="Day 2 (03/10)" primaryText="Day 2 (03/10)"/>
+              <MenuItem value="Day 3 (04/10)" primaryText="Day 3 (04/10)"/>
+              <MenuItem value="Day 4 (05/10)" primaryText="Day 4 (05/10)"/>
             </SelectField>
             <SelectField
               floatingLabelText="Venue"
