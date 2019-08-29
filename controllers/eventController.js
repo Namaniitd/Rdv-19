@@ -456,7 +456,7 @@ function addUsersToEventDatabase(res, users, event) {
       console.log("updateion error for "+addParams);
       return utils.error(res, 500, "Internal Server Error");
     } else {
-      res.json({error: false, message: "You have been registered!"});
+      res.json({message: "Event registeration successful!"});
     }
   })
 }
