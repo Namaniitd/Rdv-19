@@ -544,7 +544,7 @@ class EventCreate extends Component {
   handleUploadPhoto = (index) => async (imageURL) => {
     const image = await fetch(imageURL)
         .then((res) => res.arrayBuffer())
-        .then((buf) => new File([buf], this.state.id + "_" + (index + 1)+ ".jpg"))
+        .then((buf) => new File([buf], this.state.category + "-" + this.state.id + "_" + (index + 1)+ ".jpg"))
     const photoData = new FormData();
     photoData.append('photo', image);
     uploadPhoto(photoData).then(function(res) {

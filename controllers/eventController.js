@@ -298,12 +298,13 @@ function uploadPhoto(req, res) {
     if (err) {
         utils.error(res, 500, "Error Uploading Image");
     } else {
+      const img = "images/events/" + req.file.originalname.split('-')[0] + "/" + req.file.originalname.split('-')[1]
       const params = {
         ACL: "public-read",
         Body: data,
         Bucket: 'rdv-website-assets',
         ContentType: "image/jpeg",
-        Key: "images/events/" + req.file.originalname
+        Key: img
       };
       s3Bucket.putObject(params, (err, data) => {
         if (err) {
@@ -312,7 +313,7 @@ function uploadPhoto(req, res) {
           res.json({
             error: false,
             message: "Image Uploaded successfully!",
-            img: "https://assets.rdviitd.org/images/events/" + req.file.originalname
+            img: "https://assets.rdviitd.org/" + img
           });
         }
       });
