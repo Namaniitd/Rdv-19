@@ -25,7 +25,7 @@ const rdvPointsController = require('./controllers/rdvPointsController');
 // const passRouter = require('./main/bohogetaway/app');
 
 var favicon = require('serve-favicon');
-app.use(favicon(__dirname + '/main/assets/favicon.ico'));
+app.use(favicon(__dirname + '/main/favicon.ico'));
 
 
 const cors = require('cors');
