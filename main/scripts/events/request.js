@@ -51,7 +51,7 @@ function generateEvents(eventList){
   var parent = $('.m-artists-container .fp-tableCell');
   for(var i=0;i<eventList.length;i++){
     var eventName = eventList[i].name;
-    var url = "../../../../assets/images/events/artist/artist1.jpg";
+    var url = "https://assets.rdviitd.org/images/events/artist/artist1.jpg";
     var element = '<figure class="effect-artist">'+
         '<img src='+url+' alt="" />'+
         '<figcaption>'+
@@ -70,7 +70,7 @@ function createEvents(eventList){
     var date = eventList[i].dtv.date;
     var time = eventList[i].dtv.time;
     var venue = eventList[i].dtv.venue;
-    var url = "../../../../assets/images/events/artist/artist1.jpg";
+    var url = "https://assets.rdviitd.org/images/events/artist/artist1.jpg";
     var element = '<div class="l-slide fp-slide fp-table artist-slide artist'+(i+1)+'" data-anchor="event'+(i+1)+'">'+
         '<div class="fp-tableCell">'+
         '<div class="artist-slide-next"><i class="fa fa-angle-right"></i></div>'+
@@ -107,7 +107,7 @@ function createModal(eventList){
     var regType = eventList[i].reg_type;
     var regMode = eventList[i].reg_mode;
     var prizes = eventList[i].prizes;
-    var url = "../../../../assets/images/events/artist/artist1.jpg";
+    var url = "https://assets.rdviitd.org/images/events/artist/artist1.jpg";
     var element = '<div class="modal fade" id="modal_'+eventName.split(' ').join('')+'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">'+
         '<div class="modal-dialog modal-dialog-centered" role="document">'+
             '<div class="modal-content">'+

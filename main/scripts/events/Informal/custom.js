@@ -357,8 +357,8 @@ Version:    1.1
           var url1 = eventList[i].photos[0];
           var url2 = eventList[i].photos[1];
         }else{
-          var url1 = "../../../../assets/images/events/artist/artist1.jpg";
-          var url2 = "../../../../assets/images/events/artist/artist1.jpg";
+          var url1 = "https://assets.rdviitd.org/images/events/artist/artist1.jpg";
+          var url2 = "https://assets.rdviitd.org/images/events/artist/artist1.jpg";
         }
         var element = '<figure class="effect-artist">'+
             '<img src='+url1+' alt="" />'+
@@ -384,8 +384,8 @@ Version:    1.1
           var url1 = eventList[i].photos[0];
           var url2 = eventList[i].photos[1];
         }else{
-          var url1 = "../../../../assets/images/events/artist/artist1.jpg";
-          var url2 = "../../../../assets/images/events/artist/artist1.jpg";
+          var url1 = "https://assets.rdviitd.org/images/events/artist/artist1.jpg";
+          var url2 = "https://assets.rdviitd.org/images/events/artist/artist1.jpg";
         }
         var element = '<div class="l-slide artist-slide artist'+(i+1)+'" style="background-image: url('+url1+')" data-anchor="event'+(i+1)+'">'+
             '<div class="artist-slide-next"><i class="fa fa-angle-right"></i></div>'+

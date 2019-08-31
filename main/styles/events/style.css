@@ -116,7 +116,7 @@ Common
 }
 @font-face {
     font-family: fgothic;
-    src: url(../../assets/fonts/GOTHIC.ttf);
+    src: url(https://assets.rdviitd.org/fonts/CenturyGothic-Regular.ttf);
 }
 .top-bar__headline {
     font-family: 'fgothic', Arial, sans-serif;
@@ -125,16 +125,6 @@ Common
     font-size: 3.5em;
     padding-top: 30px;
     letter-spacing: 5px;
-}
-.bg_pattern {
-    background-image: url('../../assets/images/events/07.png');
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: .2;
 }
 .video-slider .bg_pattern {
 	z-index: 1;
@@ -293,7 +283,7 @@ HOME
     text-align: center;
 }
 #background {
-    background: url(../../asse../../assets/images/events/events/background.jpg) no-repeat 50% 100%;
+    background: url(https://assets.rdviitd.org/images/events/events/bg.jpg) no-repeat 50% 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -483,13 +473,13 @@ Home with Image Slider
    height: inherit;
 }
 .ergo_slider-pic1.home-slider {
-	  background: url(../../assets/images/events/1.jpg) no-repeat center center;
+	  background: url(https://assets.rdviitd.org/images/events/1.jpg) no-repeat center center;
 }
 .ergo_slider-pic2.home-slider {
-	  background: url(../../assets/images/events/2.jpg) no-repeat center center;
+	  background: url(https://assets.rdviitd.org/images/events/2.jpg) no-repeat center center;
 }
 .ergo_slider-pic3.home-slider {
-	  background: url(../../assets/images/events/1.jpg) no-repeat center center;
+	  background: url(https://assets.rdviitd.org/images/events/1.jpg) no-repeat center center;
 }
 #ergo_slider_svg {
     width: 100%;
@@ -571,7 +561,7 @@ Timeline
 
 .timeline-section {
 	background-color: #bf1377;
-    background: url(../../assets/images/events/timeline.jpg) no-repeat center;
+    background: url(https://assets.rdviitd.org/images/events/timeline.jpg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -771,7 +761,7 @@ _:-ms-lang(x),
 }
 #circle-one {
     display: block;
-    background: url('../../assets/images/events/timeline.png') -22px -18px no-repeat, rgba(199, 10, 80, 0.27);
+    background: url('https://assets.rdviitd.org/images/events/timeline.png') -22px -18px no-repeat, rgba(199, 10, 80, 0.27);
     background-size: 430%;
     background-blend-mode: color-burn;
     float: left;
@@ -783,7 +773,7 @@ _:-ms-lang(x),
 }
 #circle-two {
     display: block;
-    background: url('../../assets/images/events/timeline.png') -442px -16px no-repeat, rgba(199, 95, 140, 0.66);
+    background: url('https://assets.rdviitd.org/images/events/timeline.png') -442px -16px no-repeat, rgba(199, 95, 140, 0.66);
     background-size: 430%;
     background-blend-mode: color-burn;
     -webkit-animation-delay: 300ms;
@@ -798,7 +788,7 @@ _:-ms-lang(x),
 }
 #circle-three {
     display: block;
-    background: url('../../assets/images/events/timeline.png') -243px -193px no-repeat, rgba(211, 11, 99, 0.78);
+    background: url('https://assets.rdviitd.org/images/events/timeline.png') -243px -193px no-repeat, rgba(211, 11, 99, 0.78);
     background-size: 430%;
     background-blend-mode: hard-light;
     float: left;
@@ -814,7 +804,7 @@ _:-ms-lang(x),
 }
 #circle-four {
     display: block;
-    background: url('../../assets/images/events/timeline.png') -243px -15px no-repeat, rgba(211, 76, 17, 0.5);
+    background: url('https://assets.rdviitd.org/images/events/timeline.png') -243px -15px no-repeat, rgba(211, 76, 17, 0.5);
     background-size: 430%;
     background-blend-mode: color-burn;
     -webkit-animation-delay: 700ms;
@@ -829,7 +819,7 @@ _:-ms-lang(x),
 }
 #circle-five {
     display: block;
-    background: url('../../assets/images/events/timeline.png')-22px -193px no-repeat, rgba(245, 11, 2, 0.35);
+    background: url('https://assets.rdviitd.org/images/events/timeline.png')-22px -193px no-repeat, rgba(245, 11, 2, 0.35);
     background-size: 430%;
     background-blend-mode: color-burn;
     -webkit-animation-delay: 500ms;
@@ -840,7 +830,7 @@ _:-ms-lang(x),
 }
 #circle-six {
     display: block;
-    background: url('../../assets/images/events/timeline.png')-442px -193px no-repeat, rgba(245, 11, 2, 0.35);
+    background: url('https://assets.rdviitd.org/images/events/timeline.png')-442px -193px no-repeat, rgba(245, 11, 2, 0.35);
     background-size: 430%;
     background-blend-mode: color-burn;
     -webkit-animation-delay: 600ms;
@@ -1048,45 +1038,45 @@ Artist Lineup
 ------------------------------------------------------------------------ */
 @font-face {
     font-family: caviar;
-    src: url(../../assets/fonts/CaviarDreams.ttf);
+    src: url(https://assets.rdviitd.org/fonts/CaviarDreams-Regular.ttf);
 }
 .artist-head{
     font-family: 'caviar',sans-serif;
 }
 .artist-section {
 	background-color: #bf1d1b;
-    background: url('../../assets/images/events/artist.jpg') no-repeat center center;
+    background: url('https://assets.rdviitd.org/images/events/bg.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 .artist1 {
-    background-image: url('../../assets/images/events/artist/large/artist1.jpg');
+    background-image: url('https://assets.rdviitd.org/images/events/artist/large/artist1.jpg');
 }
 .artist2 {
-    background-image: url('../../assets/images/events/artist/large/artist2.jpg');
+    background-image: url('https://assets.rdviitd.org/images/events/artist/large/artist2.jpg');
 }
 .artist3 {
-    background-image: url('../../assets/images/events/artist/large/artist3.jpg');
+    background-image: url('https://assets.rdviitd.org/images/events/artist/large/artist3.jpg');
 }
 .artist4 {
-    background-image: url('../../assets/images/events/artist/large/artist4.jpg');
+    background-image: url('https://assets.rdviitd.org/images/events/artist/large/artist4.jpg');
 }
 .artist5 {
-    background-image: url('../../assets/images/events/artist/large/artist5.jpg');
+    background-image: url('https://assets.rdviitd.org/images/events/artist/large/artist5.jpg');
 }
 .artist6 {
-    background-image: url('../../assets/images/events/artist/large/artist6.jpg');
+    background-image: url('https://assets.rdviitd.org/images/events/artist/large/artist6.jpg');
 }
 .artist7 {
-    background-image: url('../../assets/images/events/artist/large/artist7.jpg');
+    background-image: url('https://assets.rdviitd.org/images/events/artist/large/artist7.jpg');
 }
 .artist8 {
-    background-image: url('../../assets/images/events/artist/large/artist8.jpg');
+    background-image: url('https://assets.rdviitd.org/images/events/artist/large/artist8.jpg');
 }
 .artist9 {
-    background-image: url('../../assets/images/events/artist/large/artist9.jpg');
+    background-image: url('https://assets.rdviitd.org/images/events/artist/large/artist9.jpg');
 }
 .artist-slide {
     background-position: center center;
@@ -1147,7 +1137,7 @@ Artist Lineup
 }
 .artist-slide-name,
 .artist-slide-social {
-  background-image: url("../../assets/images/gray.jpg");
+  background-image: url("https://assets.rdviitd.org/images/events/bg_gray.jpg");
   background-size:cover;
   background-repeat:no-repeat;
   opacity: 0.9;
@@ -1199,7 +1189,7 @@ Artist Lineup
 .artist-slide-next,
 .artist-slide-details,
 .artist-slide-prev {
-    background-image: url("../../assets/images/blue.jpg")!important;
+    background-image: url("https://assets.rdviitd.org/images/events/bg_blue.jpg")!important;
     background-size:cover;
     background-repeat:no-repeat;
     opacity: 0.9;
@@ -1264,21 +1254,11 @@ Artist Lineup
 }
 @font-face {
     font-family: caviar;
-    src: url(../../assets/fonts/CaviarDreams.ttf);
+    src: url(https://assets.rdviitd.org/fonts/CaviarDreams-Regular.ttf);
 }
 #artist_head {
     margin-bottom: 10px;
     font-family: 'caviar',sans-serif;
-}
-.artist-section .bg_pattern {
-    background-image: url('../../assets/images/events/02.png');
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: .3;
 }
 .artist-section .container-fluid {
     height: 100%;
@@ -1665,14 +1645,14 @@ figure.effect-artist:hover p {
     }
 }
 .artist_desc .artist-bar.color-1 {
-    background-image: url("../../assets/images/blue.jpg");
+    background-image: url("https://assets.rdviitd.org/images/events/bg_blue.jpg");
     background-size:cover;
     background-repeat:no-repeat;
     opacity: 0.8;
     font-size: 60px;
 }
 .artist_desc .artist-bar.color-2 {
-  background-image: url("../../assets/images/gray.jpg");
+  background-image: url("https://assets.rdviitd.org/images/events/bg_gray.jpg");
   background-size:cover;
   background-repeat:no-repeat;
   opacity: 0.8;
@@ -1839,7 +1819,7 @@ Sponsors
 
 .sponsor-section {
 	background-color: #9f0172;
-    background: url(../../assets/images/events/clients.jpg) no-repeat center center;
+    background: url(https://assets.rdviitd.org/images/events/clients.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2005,7 +1985,7 @@ Gallery
 }
 .gallery-section {
 	background-color: #000c35;
-    background: url(../../assets/images/events/gallery.jpg) no-repeat center center;
+    background: url(https://assets.rdviitd.org/images/events/gallery.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2079,7 +2059,7 @@ ul#filterOptions li a {
     right: 0;
     color: #FFF;
     padding: 22px;
-    background-image: url('../../assets/images/events/logo.png');
+    background-image: url('https://assets.rdviitd.org/images/events/logo.png');
     background-repeat: no-repeat;
     background-size: 60px;
     background-position: 90% 99%;
@@ -2258,7 +2238,7 @@ a.askus-next-button:hover {
 }
 .askus-section {
 	background-color: #b67399;
-    background: url(../../assets/images/events/askus.jpg) no-repeat center center;
+    background: url(https://assets.rdviitd.org/images/events/askus.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2574,7 +2554,7 @@ i.fa.fa-question {
     width: 100%;
     font-size: 100%;
 	background-color: #b2342a;
-    background: url(../../assets/images/events/contact.jpg) no-repeat center center;
+    background: url(https://assets.rdviitd.org/images/events/contact.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2775,7 +2755,7 @@ i.fa.fa-question {
   Coming Soon
  ------------------------------------------------------------------------ */
  .coming_soon_bg_pattern {
-    background-image: url('../../assets/images/events/white_pattern.png');
+    background-image: url('https://assets.rdviitd.org/images/events/white_pattern.png');
     position: absolute;
     left: 0px;
     top: 0px;
@@ -2785,14 +2765,14 @@ i.fa.fa-question {
     opacity: .6;
 }
 .ergo_slider-pic1.coming-soon{
-  background: url(../../assets/images/events/1.jpg) no-repeat center center;
+  background: url(https://assets.rdviitd.org/images/events/1.jpg) no-repeat center center;
 }
 
 .ergo_slider-pic2.coming-soon{
-  background: url(../../assets/images/events/2.jpg) no-repeat center center;
+  background: url(https://assets.rdviitd.org/images/events/2.jpg) no-repeat center center;
 }
 .ergo_slider-pic3.coming-soon{
-  background: url(../../assets/images/events/3.jpg) no-repeat center center;
+  background: url(https://assets.rdviitd.org/images/events/3.jpg) no-repeat center center;
 }
 .coming-soon-social-wrapper ul {
     list-style: none;
@@ -3027,13 +3007,13 @@ svg #coming-soon-desc3 {
   404 Page
  ------------------------------------------------------------------------ */
 .ergo_slider-pic1.error-page{
-  background: url(../../assets/images/events/1.jpg) no-repeat center center;
+  background: url(https://assets.rdviitd.org/images/events/1.jpg) no-repeat center center;
 }
 .ergo_slider-pic2.error-page{
-  background: url(../../assets/images/events/2.jpg) no-repeat center center;
+  background: url(https://assets.rdviitd.org/images/events/2.jpg) no-repeat center center;
 }
 .ergo_slider-pic3.error-page{
-  background: url(../../assets/images/events/3.jpg) no-repeat center center;
+  background: url(https://assets.rdviitd.org/images/events/3.jpg) no-repeat center center;
 }
 
 .ergo_404_container{
@@ -3185,7 +3165,7 @@ a:focus {
     border-width: 0px 0px 0px 300px;
     border-color: #000;
     background-color: rgba(0, 0, 0, 0.83);
-    background-image: url('../../assets/images/events/logo.png');
+    background-image: url('https://assets.rdviitd.org/images/events/logo.png');
     background-size: 200px;
     background-repeat: no-repeat;
     background-position: center;
@@ -3690,3 +3670,10 @@ a:focus {
 
 
 /* modal scroll animation */
+
+.mainlogo {
+  display: block;
+	z-index: 50;
+	position: fixed;
+  width: 30px;
+}

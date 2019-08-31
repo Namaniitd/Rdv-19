@@ -192,3 +192,11 @@ body {
   left:50%;
   transform: translateY(-50%);
 }
+
+.mainlogo {
+  display: block;
+	z-index: 50;
+	position: fixed;
+	margin: 40px;
+  width: 40px;
+}

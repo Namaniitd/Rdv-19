@@ -121,7 +121,7 @@ input[id^='tab6_']:checked ~ section[id^='content1_']{
 }
 @font-face {
     font-family: caviar;
-    src: url(../../assets/fonts/CaviarDreams.ttf);
+    src: url(https://assets.rdviitd.org/fonts/CaviarDreams-Regular.ttf);
 }
 .artist-name{
   font-family: 'caviar',sans-serif;

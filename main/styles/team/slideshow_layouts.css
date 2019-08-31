@@ -80,7 +80,7 @@
 }
 @font-face {
     font-family: cgothic;
-    src: url(../../assets/fonts/CenturyGothic.ttf);
+    src: url(https://assets.rdviitd.org/fonts/CenturyGothic-Regular.ttf);
 }
 .slide__img-caption {
 	font-family: 'cgothic', cursive;

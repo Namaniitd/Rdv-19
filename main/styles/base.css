@@ -14,15 +14,15 @@ html {
 }
 @font-face {
     font-family: wild;
-    src: url(../assets/fonts/somethingwild-Regular.ttf);
+    src: url(https://assets.rdviitd.org/fonts/somethingwild-Regular.ttf);
 }
 @font-face {
     font-family: swistblnk;
-    src: url(../assets/fonts/SwistblnkBanthers.ttf);
+    src: url(https://assets.rdviitd.org/fonts/SwistblnkBanthers.ttf);
 }
 @font-face {
 	font-family: Kizo;
-	src: url('../assets/fonts/Kizo-Bold.otf');
+	src: url('https://assets.rdviitd.org/fonts/Kizo-Bold.otf');
 }
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -607,40 +607,12 @@ a.demo--current {
 		display: none;
 	}
 }
-.mainlogo{
+.mainlogo {
+  display: block;
 	z-index: 50;
 	position: fixed;
-	color: var(--main-color-primary);
-	font-size: 5.0em;
-	margin-top: 35px;
-	margin-left: 25px;
-	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.26), 0 3px 6px rgba(0, 0, 0, 0.26);
-}
-@media  (max-width: 1200px) and (min-width: 1001px){
-	.socialul{
-		margin-left:26px;
-	}
-	.mainlogo{
-		margin-left: 3px;
-	}
-}
-@media (max-width:1000px) {
-	.socialul{
-		visibility:hidden;
-	}
-	.mainlogo{
-		margin-left:2px;
-		transform: translateX(-10%);
-	}
-}
-@media (max-width:768px)
-{
-	.mainlogo{
-		margin-left:0px;
-		transform: translateX(0%);
-		font-size:70px;
-		margin-top:27px;
-	}
+	margin: 40px;
+  width: 40px;
 }
 .mainhead{
 	font-size: 15.5vw;
@@ -714,7 +686,7 @@ a.demo--current {
 
 /* bg-img */
 #tester{
-	background-image: url(../assets/images/bg.jpg);
+	background-image: url(https://assets.rdviitd.org/images/bg.jpg);
 	background-size: contain;
 	background-repeat: repeat-y;
 }

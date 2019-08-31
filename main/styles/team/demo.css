@@ -6,13 +6,13 @@
 }
 @font-face {
 	font-family: Kizo;
-	src: url('../../assets/fonts/Kizo-Bold.otf');
+	src: url('https://assets.rdviitd.org/fonts/Kizo-Bold.otf');
 }
 
 body {
 	font-family: 'Lucida Sans Typewriter', 'Lucida Console', monaco, 'Bitstream Vera Sans Mono', monospace;
 	color: #5f6669;
-	background-image: url('../../assets/images/bg.jpg');
+	background-image: url('https://assets.rdviitd.org/images/bg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;

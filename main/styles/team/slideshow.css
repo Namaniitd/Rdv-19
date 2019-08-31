@@ -1,13 +1,6 @@
 @font-face {
-	font-family: 'nexa_boldregular';
-	font-weight: bold;
-	font-style: normal;
-	src: url('../../assets/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.eot');
-	src: url('../../assets/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../../assets/fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff2') format('woff2'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.woff') format('woff'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.ttf') format('truetype'), url('../fonts/nexa_boldfree_macroman/Nexa_Free_Bold-webfont.svg#nexa_boldregular') format('svg');
-}
-@font-face {
 	font-family: Kizo;
-	src: url('../assets/fonts/Kizo-Bold.otf');
+	src: url('https://assets.rdviitd.org/fonts/Kizo-Bold.otf');
 }
 
 .slideshow {
@@ -142,7 +135,7 @@
 }
 @font-face {
     font-family: caviar;
-    src: url(../../assets/fonts/CaviarDreams.ttf);
+    src: url(https://assets.rdviitd.org/fonts/CaviarDreams-Regular.ttf);
 }
 
 .slide__title-main {
