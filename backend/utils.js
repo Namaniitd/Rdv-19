@@ -3,7 +3,7 @@
  */
 const jwt = require('jsonwebtoken');
 const AWS = require('aws-sdk');
-const secret =  require('./Models/secrets');
+const secret =  require('./secrets');
 
 if ((process.env.NODE_ENV === 'production')) {
   AWS.config.update({

@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const teamName = '2019_RDV_Team'
 const dynamoDB = utils.connectToDB();
 
-const secret = require('../Models/secrets');
+const secret = require('../secrets');
 
 function params(email) {
   return {

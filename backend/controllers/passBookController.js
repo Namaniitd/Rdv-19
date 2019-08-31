@@ -6,7 +6,7 @@ RDV 18 pass system
 
 // SEt Whom you are booking passes for
 let type = process.env.type;//"external";
-const secret = require('../Models/secrets');
+const secret = require('../secrets');
 
 let startTime = new Date(process.env.startBook);
 let endTime = new Date(process.env.endBook);

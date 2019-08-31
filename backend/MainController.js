@@ -1,7 +1,7 @@
-let utils = require('../../utils');
+let utils = require('./utils');
 let dynamoDB = utils.connectToDB();
 const jwt = require('jsonwebtoken');
-const secret =  require('../../Models/secrets');
+const secret =  require('./secrets');
 const request = require("request");
 
 module.exports = {
@@ -187,7 +187,7 @@ console.log("in login")
 	const password = req.body.password;
 	const token = req.body.token;
 	let endTime = new Date(process.env.endBook);
-	let curTime = new Date(); 
+	let curTime = new Date();
 	if(token){
 		var s = parseInt((endTime.getTime()-curTime.getTime())/(1000*60*process.env.slotSize)).toString();
 		console.log(s)
@@ -265,7 +265,7 @@ console.log("in login")
 				  delete user.contact_number;
 				  delete user.registered_events;
 
-				 
+
 
 				  const token = generateTokenPronite(user);
 				  // console.log("token is :")

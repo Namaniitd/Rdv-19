@@ -7,7 +7,7 @@ let jwt = require('jsonwebtoken');
 let qrimage = require('qr-image');
 let fs = require('fs');
 let crypto = require('crypto');
-const secret = require('../Models/secrets');
+const secret = require('../secrets');
 
 //let hummus = require('hummus');
 

@@ -3,7 +3,7 @@
 
 const utils = require('../utils');
 const jwt = require('jsonwebtoken');
-const secret = require('../Models/secrets')
+const secret = require('../secrets')
 const dynamoDB = utils.connectToDB();
 
 function params(email) {

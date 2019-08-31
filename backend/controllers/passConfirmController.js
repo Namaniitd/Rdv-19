@@ -9,7 +9,7 @@ let endTime = new Date(process.env.endConfirm);
 
 // Decide Pronite
 let curPronite = process.env.curPronite;
-const secret = require('../Models/secrets');
+const secret = require('../secrets');
 
 //***************CONFIRM PERIOD CONFIG*****************//
 

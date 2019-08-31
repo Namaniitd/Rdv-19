@@ -1,13 +1,13 @@
 /**
 Sunil and Manish
  */
- 
+
 const utils = require('../utils');
 
 const dynamoDB = utils.connectToDB();
 const tableName = 'RDV_Resources';
 
-// get all categories of events 
+// get all categories of events
 function getCategories(req, res) {
   const params = {
     TableName: tableName

@@ -7,7 +7,7 @@ const dynamoDB = utils.connectToDB();
 const tableName = '2019_RDV_Events';
 const tableName2 = '2019_RDV_Registrations';
 // secret keys
-const secret = require('../Models/secrets');
+const secret = require('../secrets');
 
 // get all events
 function getEvents(req, res) {

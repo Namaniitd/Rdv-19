@@ -9,7 +9,7 @@ const _ = require('underscore');
 
 const dynamoDB = utils.connectToDB();
 const tableName = '2019_RDV_Team';
-const secret = require('../Models/secrets');
+const secret = require('../secrets');
 
 
 //get all team except web team admin
@@ -199,7 +199,7 @@ function selfUpdate(req, res) {
   })
 }
 
-// delte a team member 
+// delte a team member
 function deleteTeamMember (req, res) {
   const email = req.params.email;
   if (!email)

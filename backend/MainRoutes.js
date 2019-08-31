@@ -1,7 +1,7 @@
 var express = require('express');
-var mainController = require('../controllers/MainController');
 var router = express.Router();
-var app = require('../../ApplicationInstance');
+
+var mainController = require('./MainController');
 
 router.route('/').get(mainController.home);
 router.route('/login').get(mainController.login);
@@ -9,7 +9,7 @@ router.route('/login').get(mainController.login);
 // router.route('/accommodation').get(mainController.accommodation);
 // router.route('/sponsors').get(mainController.sponsors);
 // router.route('/team').get(mainController.team);
-//
+
 // router.route('/events').get(mainController.events);
 router.route('/events/adventure').get(mainController.adventure);
 router.route('/events/comedy').get(mainController.comedy);
@@ -27,7 +27,7 @@ router.route('/events/pfc').get(mainController.pfc);
 router.route('/events/quizzing').get(mainController.quizzing);
 router.route('/events/spicmacay').get(mainController.spicmacay);
 router.route('/events/talent').get(mainController.talent);
-//
+
 // router.route('/passFac').get(mainController.passFac);
 // router.route('/passFac').post(mainController.passFac1);
 // router.route('/'+process.env.addition+'pronite/login').get(mainController.proniteLogin);

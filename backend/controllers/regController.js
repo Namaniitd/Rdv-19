@@ -9,7 +9,7 @@ const utils = require('../utils');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const request = require('request');
-const secret = require('../Models/secrets');
+const secret = require('../secrets');
 // Db settings
 const dynamoDB = utils.connectToDB();
 const tableName = '2019_RDV_Registrations';
