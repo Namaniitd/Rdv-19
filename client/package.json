@@ -1,26 +1,31 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
+  "name": "RDV-Admin",
+  "version": "3.0.0",
+  "homepage": "https://rdviitd.org/admin",
   "dependencies": {
-    "axios": "^0.16.1",
-    "jquery": "^3.3.1",
-    "material-ui": "^0.18.1",
-    "query-string": "^4.3.4",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.2",
-    "react-tap-event-plugin": "^2.0.1"
+    "axios": "^0.19.0",
+    "jquery": "^3.4.1",
+    "material-ui": "^0.20.2",
+    "query-string": "^6.8.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-image-crop": "^8.2.2",
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
-    "react-scripts": "1.0.3"
+    "react-scripts": "^3.1.1"
   },
-  "proxy": "http://localhost:3001/",
-  "homepage": "http://localhost:3001/admin",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
   }
 }

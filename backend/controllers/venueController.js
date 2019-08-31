@@ -2,7 +2,6 @@
  * Created by Sunil Kumar
  */
 const utils = require('../utils');
-const _ = require('underscore');
 
 const dynamoDB = utils.connectToDB();
 const tableName = 'RDV_Resources';

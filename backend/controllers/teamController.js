@@ -5,7 +5,6 @@ const utils = require('../utils');
 const teamAddMailer = require('../mailers/teamAddMailer');
 const defaultPermissions = require('./defaultPermissions');
 const crypto = require('crypto');
-const _ = require('underscore');
 
 const dynamoDB = utils.connectToDB();
 const tableName = '2019_RDV_Team';
@@ -20,7 +19,6 @@ function getTeam(req, res) {
   dynamoDB.scan(params, function(err, data) {
     if (err)
       return utils.error(res, 500, "Internal Server Error");
-    const team = _.reject(data.Items, {email: "admin@rdv.com"});
     return res.json({
       team: team,
     })
