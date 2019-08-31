@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700");
+
+body {
+  background: #111;
+  color: #eee;
+  font-family: 'Amatic SC', sans-serif;
+}
+
+.coming {
+  animation: squiggly-anim 0.34s linear infinite;
+  font-size: 40vh;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.mainlogo {
+  display: block;
+	z-index: 50;
+	position: fixed;
+  margin: 20px;
+  width: 50px;
+}
+
+@keyframes squiggly-anim {
+  0% {
+    filter: url("#squiggly-0");
+  }
+
+  25% {
+    filter: url("#squiggly-1");
+  }
+
+  50% {
+    filter: url("#squiggly-2");
+  }
+
+  75% {
+    filter: url("#squiggly-3");
+  }
+
+  100% {
+    filter: url("#squiggly-4");
+  }
+}
