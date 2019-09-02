@@ -18,6 +18,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+process.env.NODE_ENV = 'production';
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('main'));
   app.set('views', __dirname + '/main/views');
