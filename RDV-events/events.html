@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="popup.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+	<script>
+		function toggleContent(id){
+			$('#'+id+' .event-content').fadeToggle();
+			$('#'+id+' img').fadeToggle();
+		}
+
+		//CODE FOR POPUP
+
+		window.onclick = function(event) {
+   			if (event.target == document.getElementById('dance-popup')) {
+        		document.getElementById('dance-popup').style.display = "none";
+    		}
+		}
+
+		//...
+	</script>
+</head>
+
+<body>
+	<header>
+		<span>Event</span>
+	</header>
+
+	<div class="popup" id="dance-popup">
+		<div class="popup-content animate">
+			<div class="box">
+				<div class="h">Dance<span onclick="document.getElementById('dance-popup').style.display='none'" class="close" style=" float: right;">&times</span></div>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+	</div>
+
+	<div class="event-list">
+		<div class="event-item" id="dance" onclick="toggleContent('dance')">
+			<div class="event-title">Dance</div>
+			<div class="event-content"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </div>
+			<img src="test2.png" />
+			
+				
+			
+		</div>
+		<div class="event-item" id="Music" onclick="toggleContent('Music')">
+			<div class="event-content">ITEM1</div>
+		</div>
+		<div class="event-item" onclick="document.getElementById('dance-popup').style.display='block'">DANCE MODAL</div>
+		<div class="event-item">ITEM1</div>
+		<div class="event-item">ITEM1</div>
+	</div>
+</body>
+</html>
