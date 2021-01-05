@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "homepage": "https://rdviitd.org/admin",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "jquery": "^3.4.1",
     "material-ui": "^0.20.2",
     "query-string": "^6.8.3",
