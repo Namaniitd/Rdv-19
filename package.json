@@ -2,7 +2,7 @@
   "name": "Rendezvous2019",
   "version": "3.0.0",
   "dependencies": {
-    "aws-sdk": "^2.521.0",
+    "aws-sdk": "^2.814.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "ejs": "^2.6.2",
